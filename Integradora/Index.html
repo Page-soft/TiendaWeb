@@ -11,17 +11,20 @@
         background-repeat: no-repeat;
         background-size: cover;
         text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        min-width:600px;
+        max-width:2000px;
         }
         * {
             margin:0;
             padding:0;
-            font: Arial;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
         .main-content{
             padding-top: 60px;
             width: 100%;
-            padding-right: 400px;
-            padding-left: 50px;
+            
         }
         .field {
             display:flex;
@@ -32,8 +35,8 @@
 
         .field>button {
             padding: 10px;
-            background-color:rgb(26, 188, 156);
-            color:white;
+            background-color:#feecc8;
+            color:black;
             border:none;
         }
         .producto-lista{
@@ -78,14 +81,19 @@
             color:#999; 
         }
         nav{
-            width: 1000px;
-            padding-right: 40px;
+            width: 100%;
+
             
         }
         .celda-ropa{
             font-size: 30px;
             text-align: center;
         }
+        .dropdown-menu{
+            background-color: #feecc8;
+        }
+        
+        
     </style>
 </head>
 <body>
@@ -93,9 +101,8 @@
         <nav class="navbar navbar-dark " style="background-color: #836953";>
             <div class="slide-item">
               <!--Imagen Logo superior Izquierda-->
-              <img src="logo.png" WIDTH="180px" HEIGHT="150px">
+              <img src="LogoRopa2.jpg" WIDTH="150px" HEIGHT="100px" alt="">
             </div> 
-
             <!--Barra de Busqueda-->
           
           <link rel="stylesheet" href="css/estilos2.css">
@@ -103,12 +110,13 @@
               <input type="text" id="searchterm" placeholder="Ropa" />
               <button type="button" id="search">Buscar</button>
             </div>
-      
+
+            <!--boton de carrito-->
+            <button id="close" class="navbar-toggler" onClick="javascript:close_clip()"><a href="carrito.html"><img src="carro-de-la-compra.png"WIDTH="30px" HEIGHT="30px" alt=""></a></button>
             <!--Boton de Catalogo-->
             <button class="navbar-toggler" aling="Left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-      
           <!--Catalogo-->
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                           <ul class="navbar-nav mr-auto">
@@ -152,7 +160,7 @@
             <div class="celda-ropa" >Productos</div>
             <div class="lista-productos">
                 <div class="producto-box">
-                    <a href="">
+                    <a href="playera-azul.jpg">
                         <div class="producto">
                             <img src="playera-azul.jpg" alt="">
                             <div class="detalle-titulo">Playera para hombre</div>
