@@ -1,7 +1,7 @@
-.slider{
+slider{
     width: 28%;
-    margin: auto;
     overflow: hidden;
+    float: right;
 }
 .slider ul {
     display: flex;
