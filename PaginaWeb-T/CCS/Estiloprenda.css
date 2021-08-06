@@ -1,0 +1,88 @@
+body {
+    background-image:url('imagen_fondo.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    min-width:600px;
+    max-width:2000px;
+    }
+    * {
+        margin:0;
+        padding:0;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .main-content{
+        padding-top: 60px;
+        width: 100%;
+        
+    }
+    .field {
+        display:flex;
+        position:relative;
+        width:10%;
+        flex-direction:row-reverse;
+    }
+
+    .field>button {
+        padding: 10px;
+        background-color:#feecc8;
+        color:black;
+        border:none;
+    }
+    .producto-lista{
+        display: table;
+        width: 100%;
+    }
+    .producto-box{
+        display: inline-table;
+        padding: 10px;
+        width: calc(100%/3 - 20px);
+    }
+    .producto-box a {
+        text-decoration: none;
+    }
+    .producto{
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 8px 3px #ccc;
+        background-color: #fff;
+    }
+    .producto img{
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+    .detalle-titulo{
+        padding: 15px;
+        text-align: center;
+        font-size:14px;
+        color: rgb(0, 0, 0) 
+    }
+    .detalle-descripcion{
+        text-align: center;
+        font-size: 14px;
+        color:rgb(0, 0, 0);
+        padding: 5px;
+        width: calc(100% - 10px);
+
+    }
+    .detalle-precio{
+        text-align: center;
+        font-size: 18px;
+        color:rgb(0, 0, 0); 
+    }
+    nav{
+        width: 100%;
+
+        
+    }
+    .celda-ropa{
+        font-size: 30px;
+        text-align: center;
+    }
+    .dropdown-menu{
+        background-color: #feecc8;
+    }
+    
+    

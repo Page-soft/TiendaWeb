@@ -1,0 +1,287 @@
+* {
+    margin:0;
+    padding:0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    body {
+    background-image:url('imagen_fondo.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    min-width:600px;
+    max-width:2000px;
+    }
+    * {
+        margin:0;
+        padding:0;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .main-content{
+        padding-top: 60px;
+        width: 100%;
+        padding-right: 350px;
+        
+    }
+    .field {
+        display:flex;
+        position:relative;
+        width:10%;
+        flex-direction:row-reverse;
+    }
+
+    .field>button {
+        padding: 10px;
+        background-color:#feecc8;
+        color:black;
+        border:none;
+    }
+    .producto-lista{
+        display: table;
+        width: 100%;
+    }
+    .producto-box{
+        display: inline-table;
+        padding: 10px;
+        width: calc(100%/3 - 20px);
+    }
+    .producto-box a {
+        text-decoration: none;
+    }
+    .producto{
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 8px 3px #ccc;
+        background-color: #fff;
+    }
+    .producto img{
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+    .detalle-titulo{
+        padding: 15px;
+        text-align: center;
+        font-size:14px;
+        color: #999 
+    }
+    .detalle-descripcion{
+        text-align: center;
+        font-size: 14px;
+        color:#999;
+        padding: 5px;
+        width: calc(100% - 10px);
+
+    }
+    .detalle-precio{
+        text-align: center;
+        font-size: 18px;
+        color:#999; 
+    }
+    nav{
+        width: 100%;
+    }
+    .celda-ropa{
+        font-size: 30px;
+        text-align: center;
+    }
+    .dropdown-menu{
+        background-color: #feecc8;
+    }
+/*Carrucel */
+.slider{
+    width: 20%;
+    overflow: hidden;
+    float: right;
+    padding-top: 115px;
+    
+    
+}
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 300%;
+    
+
+    animation: cambio 20S infinite;
+}
+.slider li{
+    list-style: none;
+}
+.slider img{
+    width: 100%;
+    height: 1000px;
+    
+}
+
+@keyframes cambio {
+    0% { margin-left: 0%;}
+    20%{ margin-left: 0%;}
+
+    25% { margin-left: -100%;}
+    45%{ margin-left: -100%;}
+
+    50% { margin-left: -200%;}
+    70%{ margin-left: -200%;}
+}
+/* Inicio Sesion */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: href="../Imagenes/imagen_fondo.jpeg";
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form-inicio {
+    width: 450px;
+    background: #836953;
+    padding: 40px;
+    margin: auto;
+    margin-top: 170px;
+    border-radius: 20px;
+    font-family: arial;
+    color: white;
+    box-shadow: 7px 10px 25px #000;
+}
+
+.form-inicio h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.controles {
+    width: 100%;
+    background: #feecc8;
+    padding: 16px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #4B3621;
+    font-family: 'arial';
+    font-size: 16px;
+}
+
+.form-inicio p {
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.form-inicio a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.form-inicio a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.form-inicio .boton {
+    width: 100%;
+    align-content: center;
+    background: white;
+    border: 1px solid #4B3621;
+    padding: 12px;
+    color: black;
+    margin: 10px 0px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+/*Registro*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.form-registro {
+    width: 450px;
+    background: #836953;
+    padding: 40px;
+    margin: auto;
+    margin-top: 77px;
+    border-radius: 20px;
+    font-family: arial;
+    color: white;
+    box-shadow: 7px 10px 25px #000;
+}
+
+.form-registro h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.controles {
+    width: 100%;
+    background: #feecc8;
+    padding: 16px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #4B3621;
+    font-family: 'arial';
+    font-size: 16px;
+}
+
+.form-registro p {
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.form-registro a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.form-registro a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.form-registro .boton {
+    width: 100%;
+    align-content: center;
+    background: white;
+    border: 1px solid #4B3621;
+    padding: 12px;
+    color: black;
+    margin: 10px 0px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* footer */
+
+.footer-style {
+    padding-top: 50px;
+    background-color: #4B3621;
+}
+footer {
+  color: white;
+}
+footer h3 {
+  margin-bottom: 30px;
+    font-weight: 800;
+}
+footer .footer-above {
+  padding-top: 50px;
+  background-color: #2C3E50;
+}
+footer .footer-col {
+  margin-bottom: 50px;
+}
+footer .footer-below {
+  padding: 25px 0;
+  background-color: #233140;
+}

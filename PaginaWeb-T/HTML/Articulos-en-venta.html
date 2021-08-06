@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit-no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Proyecto Integrador</title>
+    <style>
+    body, html{
+        margin: 0;
+        padding: 0;
+        background-color: #fefefe;
+    }
+    * {
+        margin:0;
+        padding:0;
+        font: Arial;
+}
+.main-content{
+    padding-top: 60px;
+    width: 100%;
+    padding-right: 400px;
+    padding-left: 50px;
+}
+.field {
+    display:flex;
+    position:relative;
+    width:10%;
+    flex-direction:row-reverse;
+}
+
+.field>button {
+    padding: 10px;
+    background-color:rgb(26, 188, 156);
+    color:white;
+    border:none;
+}
+        .producto-lista{
+            display: table;
+            width: 100%;
+        }
+        .producto-box{
+            display: inline-table;
+            padding: 10px;
+            width: calc(100%/3 - 20px);
+        }
+        .producto-box a {
+            text-decoration: none;
+        }
+        .producto{
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 8px 3px #ccc;
+            background-color: #fff;
+        }
+        .producto img{
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+        .detalle-titulo{
+            padding: 15px;
+            text-align: center;
+            font-size:14px;
+            color: #999 
+        }
+        .detalle-descripcion{
+            text-align: center;
+            font-size: 14px;
+            color:#999;
+            padding: 5px;
+            width: calc(100% - 10px);
+
+        }
+        .detalle-precio{
+            text-align: center;
+            font-size: 18px;
+            color:#999; 
+        }
+        nav{
+            width: 1000px;
+            padding-right: 40px;
+            
+        }
+        .celda-ropa{
+            font-size: 30px;
+            text-align: center;
+            background-color: aquamarine;
+        }
+        .lista-productos{
+            background-color: #53b7ff;
+            padding-right: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-dark " style="background-color: #53b7ff";>
+            <div class="slide-item">
+              <!--Imagen Logo superior Izquierda-->
+              <img src="C:\Users\Sared\Downloads\0.jpg"ALIGN=Justify WIDTH=180 HEIGHT=60>
+            </div> 
+            <!--Boton de Catalogo-->
+            <button class="navbar-toggler" aling="Left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+          <!--Barra de Busqueda-->
+          
+          <link rel="stylesheet" href="css/estilos2.css">
+          <div class="field" id="searchform">
+              <input type="text" id="searchterm" placeholder="Ropa" />
+              <button type="button" id="search">Buscar</button>
+            </div>
+      
+          <!--Catalogo-->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav mr-auto">
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Catalogo de Hombre
+                          </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Camisas</a>
+                                  <a class="dropdown-item" href="#">Pantalones</a>
+                                  <a class="dropdown-item" href="#">Shorts</a>
+
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Catalogo de Mujer
+                          </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Blusas</a>
+                                <a class="dropdown-item" href="#">Pantalones</a>
+                                <a class="dropdown-item" href="#">Shorts</a>
+                                <a class="dropdown-item" href="#">Vestidos</a>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Catalogo de Niño
+                          </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Camisas</a>
+                                  <a class="dropdown-item" href="#">Pantalones</a>
+                                  <a class="dropdown-item" href="#">Shorts</a>
+                              </div>
+                  </li>
+                          </ul>
+          </nav>
+              <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      
+    </header>
+    <div class="main-content">
+        <div class="container-ropa">
+            <div class="celda-ropa" >Productos</div>
+            <div class="lista-productos">
+                <div class="producto-box">
+                    <a href="">
+                        <div class="producto">
+                            <img src="playera-azul.jpg" alt="">
+                            <div class="detalle-titulo">Playera para hombre</div>
+                            <div class="detalle-descripcion">Playera talla mediana para hombre color azul</div>
+                            <div class="detalle-precio"> 200</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="producto-box">
+                    <a href="">
+                        <div class="producto">
+                            <img src="playera-azul.jpg" alt="">
+                            <div class="detalle-titulo">Playera para hombre</div>
+                            <div class="detalle-descripcion">Playera talla mediana para hombre color azul</div>
+                            <div class="detalle-precio"> 200</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="producto-box">
+                    <a href="">
+                        <div class="producto">
+                            <img src="playera-azul.jpg" alt="">
+                            <div class="detalle-titulo">Playera para hombre</div>
+                            <div class="detalle-descripcion">Playera talla mediana para hombre color azul</div>
+                            <div class="detalle-precio"> 200</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="producto-box">
+                    <a href="">
+                        <div class="producto">
+                            <img src="playera-azul.jpg" alt="">
+                            <div class="detalle-titulo">Playera para hombre</div>
+                            <div class="detalle-descripcion">Playera talla mediana para hombre color azul</div>
+                            <div class="detalle-precio"> 200</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="producto-box">
+                    <a href="">
+                        <div class="producto">
+                            <img src="playera-azul.jpg" alt="">
+                            <div class="detalle-titulo">Playera para hombre</div>
+                            <div class="detalle-descripcion">Playera talla mediana para hombre color azul</div>
+                            <div class="detalle-precio">200</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="producto-box">
+                    <a href="">
+                        <div class="producto">
+                            <img src="playera-azul.jpg" alt="">
+                            <div class="detalle-titulo">Playera para hombre</div>
+                            <div class="detalle-descripcion">Playera talla mediana para hombre color azul</div>
+                            <div class="detalle-precio">200</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="producto-box">
+                    <a href="">
+                        <div class="producto">
+                            <img src="playera-azul.jpg" alt="">
+                            <div class="detalle-titulo">Playera para hombre</div>
+                            <div class="detalle-descripcion">Playera talla mediana para hombre color azul</div>
+                            <div class="detalle-precio"> 200</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="producto-box">
+                    <a href="">
+                        <div class="producto">
+                            <img src="playera-azul.jpg" alt="">
+                            <div class="detalle-titulo">Playera para hombre</div>
+                            <div class="detalle-descripcion">Playera talla mediana para hombre color azul</div>
+                            <div class="detalle-precio">$200</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <footer class="text-center footer-style">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-col">
+                    <h3>Dirección</h3>
+                    <p>
+                        Barrio 5 Valle de las garzas <br />
+                        Calle 8 #63
+                    </p>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <h3>Mis redes</h3>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="https://www.facebook.com/brendeta">Facebook</a>
+                            
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <h3>Telefono</h3>
+                    <p>314 202 9482</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

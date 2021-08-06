@@ -1,0 +1,14 @@
+.tabla {
+    width: 100%;
+    background-color: #feecc8;
+ }
+ td {
+    width: 25%;
+    text-align: left;
+    background-color: #feecc8;
+ }
+ .id{
+    width: 100px;
+
+ }
+
