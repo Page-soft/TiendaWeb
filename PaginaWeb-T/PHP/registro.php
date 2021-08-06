@@ -4,15 +4,13 @@ include "Header.php";
 <head>
     <title></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CCS/Estilos.css">
 </head>
     <div class="container">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-8"><h2>Registrar <b>Usuario</b></h2></div>
-                        <div class="col-sm-4">
-                            <a href="home.php" class="btn btn-info add-new"><i class="fa fa-arrow-left"></i> Regresar</a>
-                        </div>
                     </div>
                 </div>
     
@@ -20,16 +18,14 @@ include "Header.php";
                 include ('database.php');
                 $Rclientes = new Database();
                 if(isset($_POST) && !empty($_POST)){
-                    $Nombre                        = $Nombre ->sanitize($_POST['Nombre']);
-                    $Apellidos                     = $Apellidos->sanitize($_POST['Apellidos']);
-                    $Correo           			   = $Correo ->sanitize($_POST['Correo']);
-                    $Telefono                      = $Telefono->sanitize($_POST['Telefono']);
-                    $Direccion                     = $Telefono->sanitize($_POST['Direccion']);
-                    $Contraseña                    = $Contraseña->sanitize($_POST['Contraseña']);
-                    $nombreU                       = $nombreU->sanitize($_POST['nombreUsuario']);
-
-
-                    $res = $Rclientes->Rusuario($Nombre,$Apellidos,$Correo,$Telefono,$Direccion,$Contraseña,$nombreU);
+                    $Nombre                        = $Rclientes ->sanitize($_POST['Nombre']);
+                    $Apellido                     = $Rclientes->sanitize($_POST['Apellido']);
+                    $Correo           			   = $Rclientes ->sanitize($_POST['Correo']);
+                    $Telefono                      = $Rclientes->sanitize($_POST['Telefono']);
+                    $Direccion                     = $Rclientes->sanitize($_POST['Direccion']);
+                    $Contrasena                    = $Rclientes->sanitize($_POST['Contrasena']);
+                   
+                    $res = $Rclientes->Cusuario($Nombre,$Apellido,$Correo,$Telefono,$Direccion,$Contrasena);
 
                     if($res){
                         $message = " Datos insertados con éxitos";
@@ -55,23 +51,28 @@ include "Header.php";
                     <form method="post">
                     <div class="col-md-6">
                         <label>Nombre:</label>
-                        <input type="text" name="nombre" id="nombre" class='form-control' maxlength="100" required >
+                        <input type="text" name="Nombre" id="Nombre" class='form-control' maxlength="100" required >
                     </div>
                     <div class="col-md-6">
                         <label>Apellidos:</label>
-                        <input type="text" name="Apellidos" id="Apellidos" class='form-control' maxlength="100" required>
+                        <input type="text" name="Apellido" id="Apellido" class='form-control' maxlength="100" required>
                     </div>
                     <div class="col-md-6">
                         <label>Correo electronico:</label>
-                        <textarea type="email" name="correo" id="correo" class='form-control' maxlength="100" required></textarea>
+                        <input type="email" name="Correo" id="Correo" class='form-control' maxlength="100" required>
                     </div>
                     <div class="col-md-6">
                         <label>Teléfono:</label>
-                        <input type="text" name="telefono" id="telefono" class='form-control' maxlength="15" required >
+                        <input type="text" name="Telefono" id="Telefono" class='form-control' maxlength="15" required >
                     </div>
                     <div class="col-md-6">
+                        <label>Direccion:</label>
+                        <textarea type="text" name="Direccion" id="Direccion" class='form-control' maxlength="100" required></textarea>
+                    </div>
+
+                    <div class="col-md-6">
                         <label>Contraseña:</label>
-                        <input type="password" name="Contraseña " id="Contraseña " class='form-control' maxlength="64" required>
+                        <input type="password" name="Contrasena" id="Contrasena" class='form-control' maxlength="64" required>
                     
                     </div>
                     

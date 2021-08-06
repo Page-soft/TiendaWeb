@@ -19,7 +19,7 @@
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-8"><h2>Agregar <b>Cliente</b></h2></div>
+                    <div class="col-sm-8"><h2>Agregar <b>Usuario</b></h2></div>
                     <div class="col-sm-4">
                         <a href="index.php" class="btn btn-info add-new"><i class="fa fa-arrow-left"></i> Regresar</a>
                     </div>
@@ -34,12 +34,12 @@
                     $Apellido                      = $clientes->sanitize($_POST['Apellido']);
                     $Correo           			   = $clientes->sanitize($_POST['Correo']);
                     $Telefono                      = $clientes->sanitize($_POST['Telefono']);
-                    $Direccion                     = $clientes->sanitize($_POST['Direccion']);
-                    $Contraseña                    = $clientes->sanitize($_POST['Contraseña']);
-                    $nombreU                       = $clientes->sanitize($_POST['nombreU']);
+                    $Domicilio                     = $clientes->sanitize($_POST['Domicilio']);
+                    $Contrasena                    = $clientes->sanitize($_POST['Contrasena']);
+                   
 
 
-                    $res = $clientes->usuario($Nombre,$Apellido,$Correo,$Telefono,$Direccion,$Contraseña,$nombreU);
+                    $res = $clientes->Cusuario($Nombre,$Apellido,$Correo,$Telefono,$Domicilio,$Contrasena);
 
                     if($res){
                         $message = " Datos insertados con éxitos";
@@ -69,7 +69,7 @@
 				</div>
 				<div class="col-md-6">
 					<label>Apellidos:</label>
-					<input type="text" name="Apellido " id="Apellido" class='form-control' maxlength="100" required >
+					<input type="text" name="Apellido" id="Apellido" class='form-control' maxlength="100" required >
 				</div>
 				<div class="col-md-6">
 					<label>Correo:</label>
@@ -79,18 +79,13 @@
 					<label>Telefono:</label>
 					<input type="text" name="Telefono" id="Telefono" class='form-control' maxlength="100" required >
 				</div>
-				<div class="col-md-12">
-					<label>Dirección:</label>
-					<textarea  name="Direccion" id="Direccion" class='form-control' maxlength="255" required></textarea>
+				<div class="col-md-6">
+					<label>Domicilio:</label>
+					<input type="text" name="Domicilio" id="Domicilio" class='form-control' maxlength="100" required >
 				</div>
 				<div class="col-md-6">
 					<label>Contraseña:</label>
-					<input type="text" name="Contraseña" id="Contraseña" class='form-control' maxlength="15" required >
-				</div>
-				<div class="col-md-6">
-					<label>Nombre Usuarios:</label>
-					<input type="text" name="nombreU" id="nombreU" class='form-control' maxlength="64" required>
-				
+					<input type="password" name="Contrasena" id="Contrasena" class='form-control' maxlength="15" required >
 				</div>
 				
 				<div class="col-md-12 pull-right">
