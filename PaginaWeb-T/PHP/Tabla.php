@@ -34,16 +34,15 @@
                         <th>Apellidos</th>
                         <th>Correo</th>
                         <th>Telefono</th>
-						<th>Direccion</th>
+						<th>Domicilio</th>
                         <th>Contraseña</th>
-                        <th>Nombre Usuario</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                     <?php
                     include ('database.php');
                     $cliente = new Database();
-                    $listado = $cliente->read();
+                    $listado = $cliente->Cread();
                     ?>
                 <tbody>
                     <?php
@@ -53,37 +52,31 @@
                             $Apellido      =$row->Apellido;
                             $Email         = $row->Correo;
                             $Telefono      = $row->Telefono;
-                            $Direccion     = $row->Direccion;
-                            $Contraseña    = $row->Contraseña;
-                            $nombreU       = $row->nombreU;
+                            $Domicilio     = $row->Domicilio;
+                            $Contrasena    = $row->Contrasena;
+                            
 
 
                         
                     ?>
                     <tr>
-                    <td><?php echo $idUsuario; ?></td>
-                    <td><?php echo $Nombre; ?></td>
-                    <td><?php echo $Email; ?></td>
-                    <td><?php echo $Telefono; ?></td>
-                    <td><?php echo $Direccion; ?></td>
-                    <td><?php echo $Contraseña; ?></td>
-                    <td><?php echo $nombreU; ?></td>
-                    <td></td>
+                    <td><?php echo $idUsuario ?></td>
+                    <td><?php echo $Nombre ?></td>
+                    <td><?php echo $Apellido ?></td>
+                    <td><?php echo $Email ?></td>
+                    <td><?php echo $Telefono ?></td>
+                    <td><?php echo $Domicilio?></td>
+                    <td><?php echo $Contrasena?></td>
                     <td>
-                        <a href="update.php?id=<?php echo $id;?>" class="edit" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                        <a href="delete.php?id=<?php echo $id;?>" class="delete" title="Eliminar" data.toogle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        <a href="Update.php?id=<?php echo $idUsuario;?>" class="edit" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        <a href="delete.php?id=<?php echo $idUsuario;?>" class="delete" title="Eliminar" data.toogle="tooltip"><i class="material-icons">&#xE872;</i></a>
                     </td>
                 </tr>
 
                 <?php
                     }
 
-                ?>
-
-
-
-                    
-                          
+                ?>      
                 </tbody>
             </table>
         </div>

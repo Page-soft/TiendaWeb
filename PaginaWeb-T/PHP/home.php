@@ -38,6 +38,8 @@ background-repeat: no-repeat;
 
                      <p> <a href="CreateU.php" class="btn btn-info"><i class="fa fa-plus"></i>Agregar Registro</a></p>
 
+                    <p> <a href="Subida.php" class="btn btn-info"><i class="fa fa-plus"></i>Agregar ImagenP</a></p>
+
                      <p><a href="Tabla.php" class="btn btn-success"><i class="fa fa-search"></i>Ver registros</a></p>
 
                      <p><a href="logout.php" class="btn btn-danger">Cerrar Sesion</a></p>

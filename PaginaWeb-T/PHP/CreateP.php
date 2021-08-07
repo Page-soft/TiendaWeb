@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="../CCS/Estilos">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -34,8 +34,9 @@
                     $Precio                       = $productos->sanitize($_POST['Precio']);
                     $Talla                        = $productos->sanitize($_POST['Talla']);
                     $productoD      			  = $productos->sanitize($_POST['productoD']);
-
-                    $res = $productos->altaP($Producto, $Precio, $Talla, $productoD);
+                    $imagenes                     = $url ="../Imagenes/".$productos->sanitize($_POST['imagenes']);
+                    
+                    $res = $productos->altaP($Producto, $Precio, $Talla, $productoD,$imagenes);
 
                     if($res){
                         $message = " Datos insertados con éxitos";
@@ -71,14 +72,20 @@
 					<label>Talla</label>
 					<input type="text" name="Talla" id="Talla" class='form-control' maxlength="15" required >
 				</div>
-				<div class="col-md-12">
-					<label>Descripcion</label>
-					<textarea  name="productoD" id="productoD" class='form-control' maxlength="64" required></textarea>
-				</div>
-				<div class="col-md-12 pull-right">
-				<hr>
-					<button type="submit" class="btn btn-success">Guardar datos</button>
-				</div>
+				<div class="col-md-6">
+                    <label>Descripcion</label>
+                    <input type="text" name="productoD" id="productoD" class='form-control' maxlength="50" required >
+                </div>
+				
+                <div class="col-md-6">
+                    <label>Subir imagen</label>
+                    <form name="MiForm" id="MiForm" method="post" action="cargar.php">
+                    <div class="form-group">
+                    <input type="file" class="form-control" id="imagenes" name="imagenes">
+                    </div>
+                <button type="submit" class="btn btn-success">Guardar datos</button>
+                </div>
+				
 				</form>
 			</div>
         </div>

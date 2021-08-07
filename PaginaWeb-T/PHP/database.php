@@ -23,18 +23,11 @@
             $return = mysqli_real_escape_string($this->con,$var);
             return $return;
         }
-        public function create($nombres,$apellidos,$direccion,$telefono,$correo_electronico){
-            $sql = "INSERT INTO `clientes` (nombres,apellidos,direccion,telefono,correo_electronico) VALUES ('$nombres','$apellidos','$direccion','$telefono','$correo_electronico')"; 
-            $res = mysqli_query($this->con, $sql);
-            if ($res){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        public function usuario($Nombre,$Apellidos,$Correo,$Telefono,$Direccion,$Contraseña,$nombreU){
-            $sql = "INSERT INTO `usuario` (Nombre,Apellidos,Correo,Telefono,Direccion,Contraseña,nombreU) VALUES ('$Nombre','$Apellidos','$Correo','$Telefono','$Contraseña','$nombreU')"; 
+
+
+        
+        public function Cusuario($Nombre,$Apellido,$Correo,$Telefono,$Domicilio,$Contrasena){
+            $sql = "INSERT INTO `usuario` (Nombre,Apellido,Correo,Telefono,Domicilio,Contrasena) VALUES ('$Nombre','$Apellido','$Correo','$Telefono','$Domicilio','$Contrasena')"; 
             $res = mysqli_query($this->con, $sql);
             if ($res){
                 return true;
@@ -45,8 +38,8 @@
         }
 
     
-        public function altaP($Producto, $Precio, $Talla, $productoD){
-            $sql = "INSERT INTO `producto` (Producto, Precio, Talla, productoD) VALUES ('$Producto', '$Precio', '$Talla', '$productoD')";
+        public function altaP($Producto, $Precio, $Talla, $productoD,$imagenes){
+            $sql = "INSERT INTO `producto` (Producto, Precio, Talla, productoD,imagenes_url) VALUES ('$Producto', '$Precio', '$Talla', '$productoD','$imagenes')";
             $res = mysqli_query($this->con, $sql);
             if ($res){
                 return true;
@@ -66,15 +59,41 @@
         
        }
 
-       public function single_record($id){
-           $sql = "SELECT * FROM usuarios where id='$id'";
+       public function Cread(){
+            $sql = "SELECT * FROM usuario";
+            $res = mysqli_query($this->con,$sql);
+            return $res;        
+
+        
+       }
+       public function Csingle_record($id){
+           $sql = "SELECT * FROM usuario where id='$id'";
            $res = mysqli_query($this->con,$sql);
            $return = mysqli_fetch_object($res );
            return $return;
        } 
 
+       public function single_record($id){
+           $sql = "SELECT * FROM usuario where id='$id'";
+           $res = mysqli_query($this->con,$sql);
+           $return = mysqli_fetch_object($res );
+           return $return;
+       } 
+
+        public function Cupdate($Nombre,$Apellido,$Correo,$Telefono,$Domicilio,$Contrasena,$id){
+           $sql = "UPDATE usuario SET Nombre='$Nombre',Apellido='$Apellido',Correo='$Correo',Telefono='$Telefono',Domicilio='$Domicilio',Contrasena='$Contrasena' WHERE id='$id'";
+           $res = mysqli_query($this->con,$sql);
+           if ($res) {
+               return true;
+           }
+           else{
+               return false;
+           }
+       }
+
+
        public function update($nombres,$apellido,$direccion,$correo_electronico,$telefono,$id){
-           $sql = "UPDATE clientes SET nombres='$nombres',apellido='$apellido',telefono='$telefono,direccion='$direccion'correo_electronico='$correo_electronico' WHERE id='$id'";
+           $sql = "UPDATE usuario SET nombres='$nombres',apellido='$apellido',telefono='$telefono,direccion='$direccion'correo_electronico='$correo_electronico' WHERE id='$id'";
            $res = mysqli_query($this->con,$sql);
            if ($res) {
                return true;
@@ -85,7 +104,7 @@
        }
 
        public function delete($id){
-           $sql = "DELETE From clientes Where id=$id";
+           $sql = "DELETE From usuario Where id=$id";
            $res = mysqli_query($this->con,$sql);
            if ($res ) {
                return true;
@@ -95,5 +114,5 @@
            }
        }
 
+
     }
-?>
