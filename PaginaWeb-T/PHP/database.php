@@ -24,6 +24,12 @@
             return $return;
         }
 
+        public function Psanitize($var){
+            $return = mysqli_real_escape_string($this->con,$var);
+            return $return;
+        }
+
+
 
         
         public function Cusuario($Nombre,$Apellido,$Correo,$Telefono,$Domicilio,$Contrasena){
@@ -37,7 +43,16 @@
             }
         }
 
-    
+        public function Altausuarios($username,$password,$name){
+            $sql = "INSERT INTO `users` (username,password,name) VALUES ('$username','$password','$name')"; 
+            $res = mysqli_query($this->con, $sql);
+            if ($res){
+                return true;
+            }
+            else{
+                return false;
+            }
+    }
         public function altaP($Producto, $Precio, $Talla, $productoD,$imagenes){
             $sql = "INSERT INTO `producto` (Producto, Precio, Talla, productoD,imagenes_url) VALUES ('$Producto', '$Precio', '$Talla', '$productoD','$imagenes')";
             $res = mysqli_query($this->con, $sql);
@@ -49,34 +64,30 @@
             }
         }
         
-
-
-        public function read(){
-            $sql = "SELECT * FROM usuario";
-            $res = mysqli_query($this->con,$sql);
-            return $res;        
-
-        
-       }
-
        public function Cread(){
             $sql = "SELECT * FROM usuario";
             $res = mysqli_query($this->con,$sql);
-            return $res;        
-
+            return $res; 
         
        }
+       public function Pread(){
+            $sql = "SELECT * FROM producto";
+            $res = mysqli_query($this->con,$sql);
+            return $res; 
+        
+       }
+       
        public function Csingle_record($id){
            $sql = "SELECT * FROM usuario where id='$id'";
            $res = mysqli_query($this->con,$sql);
-           $return = mysqli_fetch_object($res );
+           $return = mysqli_fetch_object($res);
            return $return;
        } 
 
-       public function single_record($id){
-           $sql = "SELECT * FROM usuario where id='$id'";
+       public function Psingle_record($idProducto){
+           $sql = "SELECT * FROM producto where idProducto='$idProducto'";
            $res = mysqli_query($this->con,$sql);
-           $return = mysqli_fetch_object($res );
+           $return = mysqli_fetch_object($res);
            return $return;
        } 
 
@@ -91,9 +102,8 @@
            }
        }
 
-
-       public function update($nombres,$apellido,$direccion,$correo_electronico,$telefono,$id){
-           $sql = "UPDATE usuario SET nombres='$nombres',apellido='$apellido',telefono='$telefono,direccion='$direccion'correo_electronico='$correo_electronico' WHERE id='$id'";
+       public function Pupdate($Producto,$Precio,$Talla,$productoD,$idProducto){
+           $sql = "UPDATE producto SET Producto='$Producto',Precio='$Precio',Talla='$Talla',productoD='$productoD'WHERE idProducto='$idProducto'";
            $res = mysqli_query($this->con,$sql);
            if ($res) {
                return true;
@@ -105,6 +115,17 @@
 
        public function delete($id){
            $sql = "DELETE From usuario Where id=$id";
+           $res = mysqli_query($this->con,$sql);
+           if ($res ) {
+               return true;
+           }
+           else{
+               return false;
+           }
+       }
+
+        public function Pdelete($idProducto){
+           $sql = "DELETE From producto Where idProducto=$idProducto";
            $res = mysqli_query($this->con,$sql);
            if ($res ) {
                return true;

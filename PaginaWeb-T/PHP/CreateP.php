@@ -36,7 +36,7 @@
                     $productoD      			  = $productos->sanitize($_POST['productoD']);
                     $imagenes                     = $url ="../Imagenes/".$productos->sanitize($_POST['imagenes']);
                     
-                    $res = $productos->altaP($Producto, $Precio, $Talla, $productoD,$imagenes);
+                    $res = $productos->altaP($Producto, $Precio, $Talla, $productoD, $imagenes);
 
                     if($res){
                         $message = " Datos insertados con éxitos";

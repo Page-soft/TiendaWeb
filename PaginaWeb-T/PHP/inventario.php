@@ -17,36 +17,69 @@
     <link rel="stylesheet" href="../CCS/inventario.css">
 </head>
 <body>
-<br>
-<table border="4" >
-  <tr>
-    <td class="id">id</td>
-    <td>Nombre Del Producto</td>
-    <td>Precio Del Producto</td>
-    <td>Descripcion</td>
-    <td>Talla</td>
-  </tr>
+<div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Listado de  <b>Productos</b></h2></div>
+                    <div class="col-sm-4">
+                        <a href="createP.php" class="btn btn-info add-new"><i class="fa fa-plus"></i> Agregar Producto</a>
+                        <a href="home.php" class="btn btn-info add-new"></i> Perfil</a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered">
+            <thead>
+            <tr>
+            <th>id</th>
+            <th>Nombre Del Producto</th>
+            <th>Precio Del Producto</th>
+            <th>Talla</th>
+            <th>Descripcion</th>
+            <th>Acciones</th>
+            </tr>
+            </thead>
 
-  <?php 
-  $sql="SELECT * from producto";
-  $result=mysqli_query($conexion,$sql);
+            <?php
+            include ('database.php');
+            $Producto = new Database();
+            $listadoP = $Producto->Pread();
+            ?>
+            
+            <tbody>
+              <?php
+              while ($row = mysqli_fetch_object($listadoP)){
+                $idProducto     = $row->idProducto;
+                $Producto       = $row->Producto;
+                $Precio         =$row->Precio;
+                $Talla         = $row->Talla;
+                $productoD      = $row->productoD;
+                 ?>
 
-  while($mostrar=mysqli_fetch_array($result)){
-   ?>
+          
 
-  <tr>
-    <td><?php echo $mostrar['idProducto'] ?></td>
-    <td><?php echo $mostrar['Producto'] ?></td>
-    <td><?php echo $mostrar['Precio'] ?></td>
-    <td><?php echo $mostrar['productoD'] ?></td>
-    <td><?php echo $mostrar['Talla'] ?></td>
+                
+                  <tr>
+                    <td><?php echo $idProducto ?></td>
+                    <td><?php echo $Producto ?></td>
+                    <td><?php echo $Precio ?></td>
+                    <td><?php echo $Talla ?></td>
+                    <td><?php echo $productoD ?></td>
+                    <td>
+
+                  <a href="Pupdate.php?id=<?php echo $idProducto;?>" class="edit" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                  <a href="delete.php?id=<?php echo $idProducto;?>" class="delete" title="Eliminar" data.toogle="tooltip"><i class="material-icons">&#xE872;</i></a>
+    </td>
   </tr>
 <?php 
 }
  ?>
+</tbody>
 </table>
+</div>
+</div>
+</body>
+</html>
 <?php
     include "Footer.php";
     ?>
-</body>
-</html>

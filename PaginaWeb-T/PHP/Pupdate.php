@@ -29,10 +29,10 @@
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-8"><h2>Editar <b>Cliente</b></h2></div>
+                    <div class="col-sm-8"><h2>Editar <b>Producto</b></h2></div>
                     <div class="col-sm-4">
-                        <a href="index.php" class="btn btn-info add-new"><i class="fa fa-arrow-left"></i> Regresar</a>
-                        <a href="Tabla.php" class="btn btn-info add-new">Tabla</a>
+                        <a href="home.php" class="btn btn-info add-new"><i class="fa fa-arrow-left"></i> Regresar</a>
+                        <a href="inventario.php" class="btn btn-info add-new">Tabla</a>
 
                     </div>
                 </div>
@@ -40,19 +40,17 @@
 
 			<?php
                 include ('database.php');
-                $clientes = new Database();
+                $Producto = new Database();
                 if(isset($_POST) && !empty($_POST)){
-                    $Nombre                        = $clientes->sanitize($_POST['Nombre']);
-                    $Apellido                      = $clientes->sanitize($_POST['Apellido']);
-                    $Correo           			   = $clientes->sanitize($_POST['Correo']);
-                    $Telefono                      = $clientes->sanitize($_POST['Telefono']);
-                    $Domicilio                     = $clientes->sanitize($_POST['Domicilio']);
-                    $Contrasena                    = $clientes->sanitize($_POST['Contrasena']);
-                    $id							   =intval($_POST['id']);
+                    $Producto                       = $Producto->sanitize($_POST['Producto']);
+                    $Precio                      	= $Producto->sanitize($_POST['Precio']);
+                    $Talla           			   	= $Producto->sanitize($_POST['Talla']);
+                    $productoD                      = $Producto->sanitize($_POST['productoD']);
+                    $idProducto						=intval($_POST['id']);
                     
 
 
-                    $res = $clientes->Cupdate($Nombre,$Apellido,$Correo,$Telefono,$Domicilio,$Contrasena,$id);
+                    $res = $Producto->Pupdate($Producto,$Precio,$Talla,$productoD,$idProducto);
 
 				if($res){
 					$message = " Datos actualizados con éxitos";
@@ -70,37 +68,29 @@
 				</div>
 				<?php
 			}
-			$datos_cliente = $clientes->Csingle_record($id);
+			$datos_cliente = $Producto->Psingle_record($id);
 		?>
 
 			<div class="row">
 				<form method="post">
 				<div class="col-md-6">
-					<label>Nombres:</label>
-					<input type="text" name="Nombre" id="Nombre" class='form-control' maxlength="100" required  value="<?php echo $datos_cliente->Nombre;?>">
+					<label>Producto:</label>
+					<input type="text" name="Producto" id="Producto" class='form-control' maxlength="100" required  value="<?php echo $datos_cliente->Producto;?>">
 					<input type="hidden" name="id" id="id" class='form-control' maxlength="100"   value="<?php echo $datos_cliente->id;?>">
 				</div>
 				<div class="col-md-6">
-					<label>Apellidos:</label>
-					<input type="text" name="Apellido" id="Apellido" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->Apellido;?>">
+					<label>Precio:</label>
+					<input type="text" name="Precio" id="Precio" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->Precio;?>">
 				</div>
 				<div class="col-md-6">
-					<label>Correo:</label>
-					<input type="text" name="Correo" id="Correo" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->Correo;?>">
+					<label>Talla:</label>
+					<input type="text" name="Talla" id="Talla" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->Talla;?>">
 				</div>
 				<div class="col-md-6">
-					<label>Teléfono:</label>
-					<input type="text" name="Telefono" id="Telefono" class='form-control' maxlength="15" required value="<?php echo $datos_cliente->Telefono;?>">
+					<label>Descripcion:</label>
+					<input type="text" name="productoD" id="productoD" class='form-control' maxlength="50" required value="<?php echo $datos_cliente->productoD;?>">
 				</div>
-				<div class="col-md-6">
-					<label>Domicilio:</label>
-					<input type="text" name="Domicilio" id="Domicilio" class='form-control' maxlength="15" required value="<?php echo $datos_cliente->Domicilio;?>">
-				</div>
-				<div class="col-md-6">
-					<label>Contraseña:</label>
-					<input type="text" name="Contrasena" id="Contrasena" class='form-control' maxlength="64" required value="<?php echo $datos_cliente->Contrasena;?>">
 				
-				</div>
 				
 				<div class="col-md-12 pull-right">
 				<hr>
