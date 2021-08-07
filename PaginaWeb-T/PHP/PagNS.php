@@ -1,5 +1,5 @@
 <?php
-    include "Header.php";
+    include "HeaderNS.php";
     ?>
 <head>
     <title>Ropa Americana Banelly</title>
@@ -30,7 +30,7 @@
                 <div class="producto-box">
                     <a href="Prenda1.php">
                         <div class="producto">
-                            <img src="../Imagenes/zhuolin-yang-yzl6.jpg" alt="">
+                            <img src="../Imagenes/Pantalon-H.jpeg" alt="">
                             <div class="detalle-titulo">Playera para hombre</div>
                             <div class="detalle-descripcion">Playera talla mediana para hombre color azul</div>
                             <div class="detalle-precio">$200</div>

@@ -1,6 +1,6 @@
 <?php
     session_start(); 
-    include "Header.php";
+    include "HeaderPS.php";
     include "db_conn.php";
     if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
 
@@ -32,15 +32,13 @@ background-repeat: no-repeat;
                       </h5>
                     <p><a href="PagP.php" class="btn btn-primary">Inicio</a></p>
 
-                    <p> <a href="CreateP.php" class="btn btn-info add-new"><i class="fa fa-plus"></i>Agregar Producto</a></p>
+                    <p> <a href="CreateP.php"  type="button" class="btn btn-outline-success">Agregar Producto</a> </p>
 
-                    <p> <a href="inventario.php" class="btn btn-info add-new"><i class="fa fa-plus"></i>Ver inventario</a></p>
+                    <p> <a href="inventario.php"  type="button" class="btn btn-outline-success">Ver Intentario</a> </p>
 
-                     <p> <a href="CreateU.php" class="btn btn-info"><i class="fa fa-plus"></i>Agregar Registro</a></p>
+                     <p><a href="create.php" type="button" class="btn btn-outline-info">Crear Cliente </a></p>
 
-                    <p> <a href="Subida.php" class="btn btn-info"><i class="fa fa-plus"></i>Agregar ImagenP</a></p>
-
-                     <p><a href="Tabla.php" class="btn btn-success"><i class="fa fa-search"></i>Ver registros</a></p>
+                     <p><a href="Tabla.php" type="button" class="btn btn-outline-info">Ver Registro </a></p>
 
                      <p><a href="logout.php" class="btn btn-danger">Cerrar Sesion</a></p>
                   </div>

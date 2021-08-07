@@ -2,7 +2,7 @@
     session_start();
     if (!isset($_SESSION['username']) && !isset($_SESSION ['id'])) { ?>
     <?php
-include "Header.php";
+include "HeaderNS.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,11 +30,11 @@ background-repeat: no-repeat;
                 </div>
             <?php } ?>
             <div class="mb-3">
-                    <label for="username" class="from-label">Username </label>
+                    <label for="username" class="from-label">Correo </label>
                     <input type="text" class="from-control" name="username" id="username">
             </div>
             <div class="mb-3">
-                    <label for="password" class="from-label">password </label>
+                    <label for="password" class="from-label">Contraseña </label>
                     <input type="password" class="from-control" name="password" id="password">
             </div>
             <div class="mb-1">
