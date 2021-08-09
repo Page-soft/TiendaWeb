@@ -1,11 +1,11 @@
 <?php
     session_start(); 
-    include "HeaderPS.php";
     include "db_conn.php";
+    include "HeaderAdmin.php";
     if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
 
 <!DOCTYPE html>
-<html>
+<html lang>
 <head>
     <title>HOME</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -20,7 +20,7 @@ background-repeat: no-repeat;
 </style>
 <body>
         <div class="container d-flex justify-content-center align-items-center"
-         style="min-height: 100vh">
+         style="min-height: 10vh" >
             <?php if ($_SESSION['role'] == 'admin') {?>
                 <div class="card" style="width: 18rem;">
                   <img src=""
@@ -32,13 +32,13 @@ background-repeat: no-repeat;
                       </h5>
                     <p><a href="PagP.php" class="btn btn-primary">Inicio</a></p>
 
-                    <p> <a href="CreateP.php"  type="button" class="btn btn-outline-success">Agregar Producto</a> </p>
+                    <p> <a href="CreateP.php" class="btn btn-info add-new"><i class="fa fa-plus"></i>Agregar Producto</a></p>
 
-                    <p> <a href="inventario.php"  type="button" class="btn btn-outline-success">Ver Intentario</a> </p>
+                    <p> <a href="inventario.php" class="btn btn-info add-new"><i class="fa fa-plus"></i>Ver inventario</a></p>
 
-                     <p><a href="create.php" type="button" class="btn btn-outline-info">Crear Cliente </a></p>
+                     <p> <a href="CreateU.php" class="btn btn-info"><i class="fa fa-plus"></i>Agregar Registro</a></p>
 
-                     <p><a href="Tabla.php" type="button" class="btn btn-outline-info">Ver Registro </a></p>
+                     <p><a href="Tabla.php" class="btn btn-success"><i class="fa fa-search"></i>Ver registros</a></p>
 
                      <p><a href="logout.php" class="btn btn-danger">Cerrar Sesion</a></p>
                   </div>

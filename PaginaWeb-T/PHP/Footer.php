@@ -23,7 +23,14 @@ footer .footer-below {
   padding: 25px 0;
   background-color: #233140;
 }
+.display{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
 </style>
+<div class="display">
 <footer class="text-center footer-style">
         <div class="container">
             <div class="row">
@@ -50,3 +57,4 @@ footer .footer-below {
             </div>
         </div>
     </footer>
+</div>

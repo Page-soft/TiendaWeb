@@ -1,4 +1,3 @@
-
 <?php 
 	if (isset($_GET['id'])){
 		$id = intval($_GET['id']);
@@ -14,7 +13,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title></title>
+<title>Empleados</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,11 +28,9 @@
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-8"><h2>Editar <b>Cliente</b></h2></div>
+                    <div class="col-sm-8"><h2>Editar <b>Empleado</b></h2></div>
                     <div class="col-sm-4">
                         <a href="index.php" class="btn btn-info add-new"><i class="fa fa-arrow-left"></i> Regresar</a>
-                        <a href="Tabla.php" class="btn btn-info add-new">Tabla</a>
-
                     </div>
                 </div>
             </div>
@@ -42,17 +39,14 @@
                 include ('database.php');
                 $clientes = new Database();
                 if(isset($_POST) && !empty($_POST)){
-                    $Nombre                        = $clientes->sanitize($_POST['Nombre']);
-                    $Apellido                      = $clientes->sanitize($_POST['Apellido']);
-                    $Correo           			   = $clientes->sanitize($_POST['Correo']);
-                    $Telefono                      = $clientes->sanitize($_POST['Telefono']);
-                    $Domicilio                     = $clientes->sanitize($_POST['Domicilio']);
-                    $Contrasena                    = $clientes->sanitize($_POST['Contrasena']);
-                    $id							   =intval($_POST['id']);
-                    
+                    $role                        	= $clientes->sanitize($_POST['role']);
+                    $username                    	= $clientes->sanitize($_POST['username']);
+                    $password						= $clientes->sanitize($_POST['password']);
+                    $name                      		= $clientes->sanitize($_POST['name']);
+					$id 							= intval($_POST['id']);
 
 
-                    $res = $clientes->Cupdate($Nombre,$Apellido,$Correo,$Telefono,$Domicilio,$Contrasena,$id);
+                    $res = $clientes->users($role,$username,$password,$name);
 
 				if($res){
 					$message = " Datos actualizados con éxitos";
@@ -70,36 +64,26 @@
 				</div>
 				<?php
 			}
-			$datos_cliente = $clientes->Csingle_record($id);
+			$datos_cliente = $clientes->single_record($id);
 		?>
-
 			<div class="row">
 				<form method="post">
 				<div class="col-md-6">
-					<label>Nombres:</label>
-					<input type="text" name="Nombre" id="Nombre" class='form-control' maxlength="100" required  value="<?php echo $datos_cliente->Nombre;?>">
+					<label>Rol:</label>
+					<input type="text" name="role" id="role" class='form-control' maxlength="100" required  value="<?php echo $datos_cliente->role;?>">
 					<input type="hidden" name="id" id="id" class='form-control' maxlength="100"   value="<?php echo $datos_cliente->id;?>">
 				</div>
 				<div class="col-md-6">
-					<label>Apellidos:</label>
-					<input type="text" name="Apellido" id="Apellido" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->Apellido;?>">
-				</div>
-				<div class="col-md-6">
 					<label>Correo:</label>
-					<input type="text" name="Correo" id="Correo" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->Correo;?>">
+					<input type="text" name="username" id="username" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->username;?>">
 				</div>
-				<div class="col-md-6">
-					<label>Teléfono:</label>
-					<input type="text" name="Telefono" id="Telefono" class='form-control' maxlength="15" required value="<?php echo $datos_cliente->Telefono;?>">
-				</div>
-				<div class="col-md-6">
-					<label>Domicilio:</label>
-					<input type="text" name="Domicilio" id="Domicilio" class='form-control' maxlength="15" required value="<?php echo $datos_cliente->Domicilio;?>">
-				</div>
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<label>Contraseña:</label>
-					<input type="text" name="Contrasena" id="Contrasena" class='form-control' maxlength="64" required value="<?php echo $datos_cliente->Contrasena;?>">
-				
+					<input type="password" id="password" class='form-control' maxlength="255" required value="<?php echo $datos_cliente->password;?>">
+				</div>
+				<div class="col-md-6">
+					<label>Nombre:</label>
+					<input type="text" name="name" id="name" class='form-control' maxlength="15" required value="<?php echo $datos_cliente->name;?>">
 				</div>
 				
 				<div class="col-md-12 pull-right">
