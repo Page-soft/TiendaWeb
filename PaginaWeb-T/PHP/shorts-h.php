@@ -1,5 +1,5 @@
 <?php
-    include "HeaderPS.php";
+    include "Header.php";
     ?>
 <head>
     <title>Ropa americana Banelly</title>

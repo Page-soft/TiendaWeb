@@ -1,0 +1,34 @@
+body{
+    background-image:url(../Imagenes/Fondo.jpeg)
+}
+
+.nombreprenda{
+    padding: 15px;
+        text-align: center;
+        font-size:14px;
+        color: rgb(0, 0, 0) 
+}
+.container{
+    background-color: #feecc8;
+    height: 500px;
+}
+
+.container h2{
+    font-size: 40px;
+}
+
+.detalle-descripcion{
+    text-align: center;
+    font-size: 14px;
+    color:rgb(0, 0, 0);
+    padding: 5px;
+    width: calc(100% - 10px);
+}
+.detalle-precio{
+    text-align: center;
+    font-size: 40px;
+    color:rgb(0, 0, 0); 
+}
+body {
+    text-align: center;
+    }
