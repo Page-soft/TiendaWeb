@@ -2,7 +2,7 @@
 <nav class="navbar navbar-dark " style="background-color: #836953";>
             <div class="slide-item">
             <!--Imagen Logo superior Izquierda-->
-            <a href="PagP.php"> <img src="../Imagenes/LogoRopa2.jpg" WIDTH="150px" HEIGHT="100px" alt=""> </a>
+            <a href="PagPS.php"> <img src="../Imagenes/LogoRopa2.jpg" WIDTH="150px" HEIGHT="100px" alt=""> </a>
             </div> 
             
             <!--Barra de Busqueda-->
@@ -22,5 +22,5 @@
     rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
     crossorigin="anonymous">
     <link rel="stylesheet" href="../CCS/Estilos.css">
-    <link rel="stylesheet" href="../CCS/HeaderAdmin.css">
+   
 

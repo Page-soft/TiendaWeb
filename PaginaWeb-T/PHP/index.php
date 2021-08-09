@@ -2,7 +2,7 @@
     session_start();
     if (!isset($_SESSION['username']) && !isset($_SESSION ['id'])) { ?>
     <?php
-include "Header.php";
+include "HeaderNS.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,25 +22,25 @@ background-repeat: no-repeat;
 </style>
 <body>
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh">
-        <form class="border shadow p-3 rounded" action="check-login.php" method="POST" style="width: 450px;">
-            <h1 class="text-center p-3">Login</h1>
+    <form class="border shadow p-5 rounded" action="check-login.php" method="POST" style="width: 450px;">
+            <h1 class="text-center p-3">Iniciar Sesion</h1>
             <?php if (isset($_GET['error'])) { ?>
-                <div class="alert-danger" role="alert">
+                <div class="alert-danger" roles="alert">
                 <?=$_GET['error'] ?>
                 </div>
             <?php } ?>
             <div class="mb-3">
-                    <label for="username" class="from-label">Username </label>
+                    <label for="username" class="from-label">Correo </label>
                     <input type="text" class="from-control" name="username" id="username">
             </div>
             <div class="mb-3">
-                    <label for="password" class="from-label">password </label>
-                    <input type="password" class="from-control" name="password" id="password">
+                    <label for="psswd" class="from-label">Contraseña </label>
+                    <input type="password" class="from-control" name="psswd" id="psswd">
             </div>
             <div class="mb-1">
                     <label class="from-label">Selecciona tu tipo de Usuario </label>
             </div>
-            <select class="form-select mb-3" name="role" aria-label="Seleccion">
+            <select class="form-select mb-3" name="roles" aria-label="Seleccion">
                 <option selected value="user">Usuario</option>
                 <option value="admin">Admin</option>
             </select>

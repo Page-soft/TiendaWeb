@@ -3,17 +3,7 @@
      $sname = "localhost";
      $uname = "root";
      $password = "";
-     $bd_name = "my_db";
-    
-     try
-{
-	$db=new PDO("mysql:host={$sname};dbname={$bd_name}",$uname,$password);
-	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch(PDOEXCEPTION $e)
-{
-	$e->getMessage();
-}
+     $bd_name = "integradora1";
 
      $conn =  mysqli_connect ($sname,$uname,$password,$bd_name);
 
@@ -21,5 +11,4 @@ catch(PDOEXCEPTION $e)
          echo "Conexion Fallida";
          exit();
      }
-     
 ?>
