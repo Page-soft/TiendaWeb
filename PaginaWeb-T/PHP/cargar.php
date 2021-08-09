@@ -9,20 +9,6 @@ if(isset($_POST["submit"])){
         } else{
             echo 0;
         }
-        /*$Host = 'localhost';
-        $Username = 'root';
-        $Password = '';
-        $dbName = 'integradora1';
-        $db = new mysqli($Host, $Username, $Password, $dbName);
-        if($db->connect_error){
-            die("Connection failed: " . $db->connect_error);
-        }       
-        $insertar = $db->query("INSERT INTO `producto`(`imagenes_url`) VALUES ('".$url."')");
-        if($insertar){
-            echo "Archivo Subido Correctamente.";
-        }else{
-            echo "Ha fallado la subida, reintente nuevamente.";
-        }*/ 
         
     }else{
         echo "Por favor seleccione imagen a subir.";
