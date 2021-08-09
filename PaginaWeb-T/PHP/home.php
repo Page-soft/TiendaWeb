@@ -1,6 +1,6 @@
 <?php
     session_start(); 
-    include "HeaderAdmin.php";
+    include "HeaderPS.php";
     include "db_conn.php";
     if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
 
@@ -21,7 +21,7 @@ background-repeat: no-repeat;
 <body>
         <div class="container d-flex justify-content-center align-items-center"
          style="min-height: 100vh">
-            <?php if ($_SESSION['roles'] == 'admin') {?>
+            <?php if ($_SESSION['role'] == 'admin') {?>
                 <div class="card" style="width: 18rem;">
                   <img src=""
                        class=""
@@ -30,13 +30,13 @@ background-repeat: no-repeat;
                       <h5 class="card-title">
                           <?=$_SESSION['name']?>
                       </h5>
-                    <p><a href="PagPS.php" class="btn btn-primary">Inicio</a></p>
+                    <p><a href="PagP.php" class="btn btn-primary">Inicio</a></p>
 
                     <p> <a href="CreateP.php"  type="button" class="btn btn-outline-success">Agregar Producto</a> </p>
 
                     <p> <a href="inventario.php"  type="button" class="btn btn-outline-success">Ver Intentario</a> </p>
 
-                     <p><a href="createU.php" type="button" class="btn btn-outline-info">Crear Cliente </a></p>
+                     <p><a href="create.php" type="button" class="btn btn-outline-info">Crear Cliente </a></p>
 
                      <p><a href="Tabla.php" type="button" class="btn btn-outline-info">Ver Registro </a></p>
 

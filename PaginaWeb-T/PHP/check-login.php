@@ -2,7 +2,7 @@
     session_start();
     include "db_conn.php";
 
-    if (isset($_POST['username']) && isset($_POST['psswd']) && isset($_POST['roles'])){
+    if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role'])){
 
         function test_input($data){
             $data =trim($data);
@@ -12,26 +12,26 @@
         }
 
         $username = test_input($_POST['username']);
-        $psswd = test_input($_POST['psswd']);
-        $roles = test_input($_POST['roles']);
+        $password = test_input($_POST['password']);
+        $role = test_input($_POST['role']);
 
         if (empty($username)){
             header ("Location : index.php?error=Username Is Required");
-        }else if (empty($psswd)){
+        }else if (empty($password)){
             header("Location : index.php?error=Password Is Required");
         }else{
-            $psswd = md5($psswd);
+            $password = md5($password);
 
-            $sql ="SELECT * FROM users WHERE username='$username' AND psswd='$psswd'";
+            $sql ="SELECT * FROM users WHERE username='$username' AND password='$password'";
             $result = mysqli_query($conn, $sql);
 
 
             if(mysqli_num_rows($result) === 1){
                 $row = mysqli_fetch_assoc($result);
-                if ($row['psswd']=== $psswd && $row['roles']== $roles){
+                if ($row['password']=== $password && $row['role']== $role){
                     $_SESSION['name'] = $row['name'];
                     $_SESSION['id'] = $row['id'];
-                    $_SESSION['roles'] = $row['roles'];
+                    $_SESSION['role'] = $row['role'];
                     $_SESSION['username'] = $row['username'];
 
                     header("Location: home.php");
