@@ -1,6 +1,6 @@
 <?php
-    include "Header.php";
-    ?>
+include "HeaderPS.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

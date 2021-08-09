@@ -23,18 +23,17 @@
             $return = mysqli_real_escape_string($this->con,$var);
             return $return;
         }
-        public function create($nombres,$apellidos,$direccion,$telefono,$correo_electronico){
-            $sql = "INSERT INTO `clientes` (nombres,apellidos,direccion,telefono,correo_electronico) VALUES ('$nombres','$apellidos','$direccion','$telefono','$correo_electronico')"; 
-            $res = mysqli_query($this->con, $sql);
-            if ($res){
-                return true;
-            }
-            else{
-                return false;
-            }
+
+        public function Psanitize($var){
+            $return = mysqli_real_escape_string($this->con,$var);
+            return $return;
         }
-        public function users($role,$username,$password,$name){
-            $sql = "INSERT INTO `users` (role,username,password,name) VALUES ('$role','$username','$password','$name')"; 
+
+
+
+        
+        public function createE($roles,$username,$psswd,$name){
+            $sql = "INSERT INTO `users` (roles,username,psswd,name) VALUES ('$roles','$username','$psswd','$name')"; 
             $res = mysqli_query($this->con, $sql);
             if ($res){
                 return true;
@@ -44,9 +43,18 @@
             }
         }
 
-    
-        public function altaP($Producto, $Precio, $Talla, $productoD){
-            $sql = "INSERT INTO `producto` (Producto, Precio, Talla, productoD) VALUES ('$Producto', '$Precio', '$Talla', '$productoD')";
+        public function Altausuarios($username,$psswd,$name){
+            $sql = "INSERT INTO `users` (username,psswd,name) VALUES ('$username','$psswd','$name')"; 
+            $res = mysqli_query($this->con, $sql);
+            if ($res){
+                return true;
+            }
+            else{
+                return false;
+            }
+    }
+        public function altaP($Producto, $Precio, $Talla, $productoD,$imagenes,$idCategoria,$idSubCategoria){
+            $sql = "INSERT INTO `producto` (Producto, Precio,Talla,productoD,imagenes_url,idCategoria,idSubCategoria) VALUES ('$Producto','$Precio','$Talla','$productoD','$imagenes','$idCategoria','$idSubCategoria')";
             $res = mysqli_query($this->con, $sql);
             if ($res){
                 return true;
@@ -56,27 +64,48 @@
             }
         }
         
-
-
-        public function read(){
-            $sql = "SELECT * FROM users";
+       public function Eread(){
+            $sql = "SELECT * FROM usuario";
             $res = mysqli_query($this->con,$sql);
-            return $res;        
-
+            return $res; 
         
        }
-
-       public function single_record($id){
-           $sql = "SELECT * FROM users where id='$id'";
+       public function Pread(){
+            $sql = "SELECT * FROM producto";
+            $res = mysqli_query($this->con,$sql);
+            return $res; 
+        
+       }
+       
+       public function Csingle_record($id){
+           $sql = "SELECT * FROM usuario where id='$id'";
            $res = mysqli_query($this->con,$sql);
-           $return = mysqli_fetch_object($res );
+           $return = mysqli_fetch_object($res);
            return $return;
        } 
 
-       public function update($role,$username,$password,$name,$id){
-           $sql = "UPDATE users SET role='$role',username='$username',password='$password,name='$name'WHERE id='$id'";
+       public function Psingle_record($idProducto){
+           $sql = "SELECT * FROM producto where idProducto='$idProducto'";
            $res = mysqli_query($this->con,$sql);
-           if ($res) {  
+           $return = mysqli_fetch_object($res);
+           return $return;
+       } 
+
+        public function Eupdate($Nombre,$Apellido,$Correo,$Telefono,$Domicilio,$Contrasena,$id){
+           $sql = "UPDATE users SET Nombre='$Nombre',Apellido='$Apellido',Correo='$Correo',Telefono='$Telefono',Domicilio='$Domicilio',Contrasena='$Contrasena' WHERE id='$id'";
+           $res = mysqli_query($this->con,$sql);
+           if ($res) {
+               return true;
+           }
+           else{
+               return false;
+           }
+       }
+
+       public function Pupdate($Producto,$Precio,$Talla,$productoD,$idCategoria,$idSubCategoria,$idProducto){
+           $sql = "UPDATE producto SET Producto='$Producto',Precio='$Precio',Talla='$Talla',productoD='$productoD',idCategoria='$idCategoria',idSubCategoria='$idSubCategoria' WHERE idProducto='$idProducto'";
+           $res = mysqli_query($this->con,$sql);
+           if ($res) {
                return true;
            }
            else{
@@ -85,7 +114,7 @@
        }
 
        public function delete($id){
-           $sql = "DELETE From clientes Where id=$id";
+           $sql = "DELETE From users Where id=$id";
            $res = mysqli_query($this->con,$sql);
            if ($res ) {
                return true;
@@ -95,5 +124,16 @@
            }
        }
 
+        public function Pdelete($idProducto){
+           $sql = "DELETE From producto Where idProducto=$idProducto";
+           $res = mysqli_query($this->con,$sql);
+           if ($res ) {
+               return true;
+           }
+           else{
+               return false;
+           }
+       }
+
+
     }
-?>

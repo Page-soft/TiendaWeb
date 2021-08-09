@@ -1,5 +1,5 @@
 <?php
-    include "../PHP/Header.php";
+    include "HeaderPS.php";
     ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,7 +20,6 @@
         </div>
         <div class="CarritoUr">
             <link rel="stylesheet" href="../CCS/Botones.css">
-            <a href="index.php"> <button class="btnLogin">Iniciar Sesion</button> </a>
             <a href="PagP.php"><button class="btnMenu">Menu</button> </a>
         </div>
     

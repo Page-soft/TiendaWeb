@@ -40,17 +40,19 @@
 
 			<?php
                 include ('database.php');
-                $Producto = new Database();
+                $AProducto = new Database();
                 if(isset($_POST) && !empty($_POST)){
-                    $Producto                       = $Producto->sanitize($_POST['Producto']);
-                    $Precio                      	= $Producto->sanitize($_POST['Precio']);
-                    $Talla           			   	= $Producto->sanitize($_POST['Talla']);
-                    $productoD                      = $Producto->sanitize($_POST['productoD']);
+                    $Producto                       = $AProducto->sanitize($_POST['Producto']);
+                    $Precio                      	= $AProducto->sanitize($_POST['Precio']);
+                    $Talla           			   	= $AProducto->sanitize($_POST['Talla']);
+                    $productoD                      = $AProducto->sanitize($_POST['productoD']);
+                    $idCategoria                     = $AProducto->sanitize($_POST['idCategoria']);
+                    $idSubCategoria                   = $AProducto->sanitize($_POST['idSubCategoria']);
                     $idProducto						=intval($_POST['id']);
                     
 
 
-                    $res = $Producto->Pupdate($Producto,$Precio,$Talla,$productoD,$idProducto);
+                    $res = $AProducto->Pupdate($Producto,$Precio,$Talla,$productoD,$idCategoria,$idSubCategoria,$idProducto);
 
 				if($res){
 					$message = " Datos actualizados con éxitos";
@@ -68,7 +70,7 @@
 				</div>
 				<?php
 			}
-			$datos_cliente = $Producto->Psingle_record($id);
+			$datos_cliente = $AProducto->Psingle_record($id);
 		?>
 
 			<div class="row">
@@ -76,7 +78,7 @@
 				<div class="col-md-6">
 					<label>Producto:</label>
 					<input type="text" name="Producto" id="Producto" class='form-control' maxlength="100" required  value="<?php echo $datos_cliente->Producto;?>">
-					<input type="hidden" name="id" id="id" class='form-control' maxlength="100"   value="<?php echo $datos_cliente->id;?>">
+					<input type="hidden" name="id" id="id" class='form-control' maxlength="100"   value="<?php echo $datos_cliente->idProducto;?>">
 				</div>
 				<div class="col-md-6">
 					<label>Precio:</label>
@@ -85,6 +87,14 @@
 				<div class="col-md-6">
 					<label>Talla:</label>
 					<input type="text" name="Talla" id="Talla" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->Talla;?>">
+				</div>
+				<div class="col-md-6">
+					<label>Categoria:</label>
+					<input type="text" name="idCategoria" id="idCategoria" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->idCategoria;?>">
+				</div>
+				<div class="col-md-6">
+					<label>SubCategoria:</label>
+					<input type="text" name="idSubCategoria" id="idSubCategoria" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->idSubCategoria;?>">
 				</div>
 				<div class="col-md-6">
 					<label>Descripcion:</label>
