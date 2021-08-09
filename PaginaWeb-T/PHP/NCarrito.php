@@ -1,5 +1,5 @@
 <?php
-    include "../PHP/Header.php";
+    include "HeaderNS.php";
     ?>
 <!DOCTYPE html>
 <html lang="es">
