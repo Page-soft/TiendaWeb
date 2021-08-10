@@ -28,7 +28,7 @@ background-repeat: no-repeat;
                        alt="">
                   <div class="card-body text-center">
                       <h5 class="card-title">
-                          <?=$_SESSION['name']?>
+                          <?=$_SESSION['nombre']?>
                       </h5>
                     <p><a href="PagPS.php" class="btn btn-primary">Inicio</a></p>
 
@@ -36,7 +36,7 @@ background-repeat: no-repeat;
 
                     <p> <a href="inventario.php"  type="button" class="btn btn-outline-success">Ver Intentario</a> </p>
 
-                     <p><a href="createU.php" type="button" class="btn btn-outline-info">Crear Cliente </a></p>
+                     <p><a href="createU.php" type="button" class="btn btn-outline-info">Crear Empleado </a></p>
 
                      <p><a href="Tabla.php" type="button" class="btn btn-outline-info">Ver Registro </a></p>
 
@@ -54,7 +54,7 @@ background-repeat: no-repeat;
                  alt="">
                 <div class="card-body text-center">
                 <h5 class="card-title">
-                <?=$_SESSION['name']?>
+                <?=$_SESSION['nombre']?>
                 </h5>
 
                 <p><a href="PagP.php" class="btn btn-dark">Ir a la tienda</a></p>

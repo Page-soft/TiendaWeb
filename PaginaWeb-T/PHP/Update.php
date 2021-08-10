@@ -42,17 +42,15 @@
                 include ('database.php');
                 $clientes = new Database();
                 if(isset($_POST) && !empty($_POST)){
-                    $Nombre                        = $clientes->sanitize($_POST['Nombre']);
-                    $Apellido                      = $clientes->sanitize($_POST['Apellido']);
-                    $Correo           			   = $clientes->sanitize($_POST['Correo']);
-                    $Telefono                      = $clientes->sanitize($_POST['Telefono']);
-                    $Domicilio                     = $clientes->sanitize($_POST['Domicilio']);
-                    $Contrasena                    = $clientes->sanitize($_POST['Contrasena']);
+                    $roles                        = $clientes->sanitize($_POST['roles']);
+                    $username                      = $clientes->sanitize($_POST['username']);
+                    $psswd           			   =md5($clientes->sanitize($_POST['psswd']));
+                    $nombre                      = $clientes->sanitize($_POST['nombre']);
                     $id							   =intval($_POST['id']);
                     
 
 
-                    $res = $clientes->Cupdate($Nombre,$Apellido,$Correo,$Telefono,$Domicilio,$Contrasena,$id);
+                    $res = $clientes->Eupdate($roles,$username,$psswd,$nombre,$id);
 
 				if($res){
 					$message = " Datos actualizados con éxitos";
@@ -70,36 +68,27 @@
 				</div>
 				<?php
 			}
-			$datos_cliente = $clientes->Csingle_record($id);
+			$datos_cliente = $clientes->Esingle_record($id);
 		?>
 
 			<div class="row">
 				<form method="post">
 				<div class="col-md-6">
-					<label>Nombres:</label>
-					<input type="text" name="Nombre" id="Nombre" class='form-control' maxlength="100" required  value="<?php echo $datos_cliente->Nombre;?>">
+					<label>Roles:</label>
+					<input type="text" name="roles" id="roles" class='form-control' maxlength="100" required  value="<?php echo $datos_cliente->roles;?>">
 					<input type="hidden" name="id" id="id" class='form-control' maxlength="100"   value="<?php echo $datos_cliente->id;?>">
 				</div>
 				<div class="col-md-6">
-					<label>Apellidos:</label>
-					<input type="text" name="Apellido" id="Apellido" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->Apellido;?>">
-				</div>
-				<div class="col-md-6">
 					<label>Correo:</label>
-					<input type="text" name="Correo" id="Correo" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->Correo;?>">
-				</div>
-				<div class="col-md-6">
-					<label>Teléfono:</label>
-					<input type="text" name="Telefono" id="Telefono" class='form-control' maxlength="15" required value="<?php echo $datos_cliente->Telefono;?>">
-				</div>
-				<div class="col-md-6">
-					<label>Domicilio:</label>
-					<input type="text" name="Domicilio" id="Domicilio" class='form-control' maxlength="15" required value="<?php echo $datos_cliente->Domicilio;?>">
+					<input type="text" name="username" id="username" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->username;?>">
 				</div>
 				<div class="col-md-6">
 					<label>Contraseña:</label>
-					<input type="text" name="Contrasena" id="Contrasena" class='form-control' maxlength="64" required value="<?php echo $datos_cliente->Contrasena;?>">
-				
+					<input type="password" name="psswd" id="psswd" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->psswd;?>">
+				</div>
+				<div class="col-md-6">
+					<label>Nombre:</label>
+					<input type="text" name="nombre" id="nombre" class='form-control' maxlength="15" required value="<?php echo $datos_cliente->nombre;?>">
 				</div>
 				
 				<div class="col-md-12 pull-right">

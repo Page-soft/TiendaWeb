@@ -33,13 +33,13 @@ include "HeaderAdmin.php";
                 include ('database.php');
                 $Empleados = new Database();
                 if(isset($_POST) && !empty($_POST)){
-                	$role                           = $Empleados->sanitize($_POST['role']);
+                	$roles                           = $Empleados->sanitize($_POST['roles']);
                     $username                       = $Empleados->sanitize($_POST['username']);
                     $password                     =md5($Empleados->sanitize($_POST['password']));
                     $name                         = $Empleados->sanitize($_POST['name']);
                     
 
-                    $res = $Empleados->createE($role,$username,$password,$name);
+                    $res = $Empleados->createE($roles,$username,$password,$name);
 
                     if($res){
                         $message = " Datos insertados con éxitos";
@@ -60,22 +60,22 @@ include "HeaderAdmin.php";
             ?>
 
 
-           
+            <div class="container">
+			<form method="post">
 			<div class="row">
-				<form method="post">
-				<div class="col-md-6">
-					<label>Role:</label>
-					<input type="text" name="role" id="role" class='form-control' maxlength="100" required >
-				</div>
-				<div class="col-md-6">
+			<div class="col-md-3">
+                    <label>Roles:</label>
+                    <input type="text" name="roles" id="roles" class='form-control' maxlength="100" required>
+                </div>
+				<div class="col-md-3">
 					<label>Correo:</label>
 					<input type="text" name="username" id="username" class='form-control' maxlength="100" required>
 				</div>
-                <div class="col-md-6">
+                <div class="col-md-3">
 					<label>Contraseña:</label>
 					<input type="password" name="password" id="password" class='form-control' maxlength="64" required>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-3">
 					<label>Nombre:</label>
 					<input type="text" name="name" id="name" class='form-control' maxlength="15" required >
 				</div>

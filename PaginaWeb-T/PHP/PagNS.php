@@ -26,7 +26,7 @@
                 <a href="../Imagenes/Encabezado.png"></a>
             </div>
             <div class="lista-productos">
-                <div class="celda-ropa" >Productos</div>
+                <img src="../Imagenes/ropa.jpeg" width="1040px" alt=""></div>
                 <div class="producto-box">
                     <a href="Prenda1.php">
                         <div class="producto">
