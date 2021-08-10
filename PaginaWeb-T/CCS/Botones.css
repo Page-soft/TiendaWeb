@@ -53,3 +53,7 @@
     cursor: pointer;
     color: #000;
 }
+
+.btn-success{
+    align-items: center;
+}
