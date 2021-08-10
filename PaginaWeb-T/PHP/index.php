@@ -20,7 +20,7 @@ background-size: cover;
 background-repeat: no-repeat;
 }
 </style>
-<body>
+<body background="../Imagenes/Fondo1.jpeg">
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh">
     <form class="border shadow p-5 rounded" action="check-login.php" method="POST" style="width: 450px;">
             <h1 class="text-center p-3">Iniciar Sesion</h1>

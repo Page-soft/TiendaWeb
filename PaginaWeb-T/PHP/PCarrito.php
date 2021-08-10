@@ -15,21 +15,15 @@
             <h1>Tu carrito esta vacio.</h1>
             <link rel="stylesheet" href="../CCS/ImagenCarrito.css">
             <ul>
-                <li><img src="../Imagenes/carrito de compras.jpeg" width="400px" height="500px" alt=""></li>
+                <img src="../Imagenes/carrito de compras.jpeg" width="400px" height="500px" alt="">
             </ul>
-        </div>
-        <div class="CarritoUr">
-            <link rel="stylesheet" href="../CCS/Botones.css">
+            <link  rel="stylesheet" href="../CCS/Botones.css">
             <a href="PagP.php"><button class="btnMenu">Menu</button> </a>
         </div>
-    
-        <div class="slider">
-            <link rel="stylesheet" href="Estilos.css">
-            
-        </div>
     </div>
+</div>
     <?php
-    include "../PHP/Footer.php";
+    include "Footer.php";
     ?>
 </body>
 </html>

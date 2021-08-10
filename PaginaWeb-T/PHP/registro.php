@@ -33,10 +33,10 @@ background-repeat: no-repeat;
                if(isset($_POST) && !empty($_POST)){
                    $username                  = $usuarios->sanitize($_POST['username']);
                    $psswd                      =md5($usuarios->sanitize($_POST['psswd']));
-                   $name                      = $usuarios->sanitize($_POST['name']);
+                   $nombre                      = $usuarios->sanitize($_POST['nombre']);
                 
  
-                   $res = $usuarios->Altausuarios($username,$psswd,$name);
+                   $res = $usuarios->Altausuarios($username,$psswd,$nombre);
                    
 
                    if($res){
@@ -77,7 +77,7 @@ background-repeat: no-repeat;
                 </div>
                 <div class="col-md-12">
                     <label>Nombre:</label>
-                    <input type="text" name="name" id="name" class='form-control' maxlength="100" required >
+                    <input type="text" name="nombre" id="nombre" class='form-control' maxlength="100" required >
                 </div>
                 <div class="col-md-12 pull-right">
                 <hr>

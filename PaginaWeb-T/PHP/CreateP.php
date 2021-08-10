@@ -21,11 +21,12 @@ include "HeaderAdmin.php";
 <div class="productos">
         <div class="table-wrapper">
             <div class="table-title">
+            <div class="container">
+            <div class="col-sm-2">
+            <a href="index.php" class="btn btn-info add-new"><i class="fa fa-arrow-left"></i> Regresar</a>
+                </div>
                 <div class="row">
-                    <div class="col-sm-12"><h2>Agregar Producto</h2></div>
-                    <div class="col-sm-2">
-                        <a href="index.php" class="btn btn-info add-new"><i class="fa fa-arrow-left"></i> Regresar</a>
-                    </div>
+                    <div class="col-sm-10"><h2>Agregar Producto</h2></div>
                 </div>
             </div>
 
@@ -41,7 +42,7 @@ include "HeaderAdmin.php";
                     $idCategoria                  = $productos->sanitize($_POST['idCategoria']);
                     $idSubCategoria               = $productos->sanitize($_POST['idSubCategoria']);
                    
-                    $res = $productos->altaP($Producto,$Precio,$Talla,$productoD,$imagenes,$idSubCategoria,$idCategoria,);
+                    $res = $productos->altaP($Producto,$Precio,$Talla,$productoD,$imagenes,$idCategoria,$idSubCategoria,);
 
                     if($res){
                         $message = " Datos insertados con éxitos";
@@ -67,28 +68,30 @@ include "HeaderAdmin.php";
                 <div class="row">
 				<div class="col-md-4">
 					<label>Nombre del Producto</label>
-					<input type="text" name="Producto" id="Producto" class='form-control' maxlength="100" required>
+					<input type="text" name="Producto" id="Producto" class='form-control' maxlength="100" required placeholder="Nombre del Producto">
 				</div>
 				<div class="col-md-4">
 					<label>Precio</label>
-					<input type="text" name="Precio" id="Precio" class='form-control' maxlength="64" required>
+					<input type="text" name="Precio" id="Precio" class='form-control' maxlength="64" required placeholder="Precio del Producto">
 				</div>
 				<div class="col-md-4">
                     <label>Talla</label>
                     <select id="Talla" name="Talla" class='form-control'>
                     <option value="0" disabled selected>Seleccione una Talla</option>
-                    <option value="1" >Ch</option>
-                    <option value="2" >M</option>
-                    <option value="3" >G</option>
-                    <option value="3" >XL</option>
-                    <option value="3" >XXL</option>
+                    <option value="Ch" >Ch</option>
+                    <option value="M" >M</option>
+                    <option value="G" >G</option>
+                    <option value="XL" >XL</option>
+                    <option value="XXL" >XXL</option>
                     </select>
                 </div>
+            <div class="container">
             <div class="row">
 				<div class="col-md-12">
                     <label>Descripcion</label>
-                    <textarea name="productoD" id="productoD" class='form-control' maxlength="50" required ></textarea>
+                    <textarea name="productoD" id="productoD" class='form-control' maxlength="50" required placeholder="Caracteristicas del Producto" ></textarea>
                 </div>
+                <div class="container">
                 <div class="row">
 				<div class="col-md-4">
                     <label>Categoria</label>
@@ -117,7 +120,9 @@ include "HeaderAdmin.php";
                     <input type="file" class="form-control" id="imagenes" name="imagenes">
                     </div>
                 </div>
+                <div class="container">
                 <div class="row">
+                <div class="col-md-12">
 				<button type="submit" class="btn btn-success">Subir Producto</button>
 				</form>
 			</div>

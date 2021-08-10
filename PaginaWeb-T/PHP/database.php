@@ -32,8 +32,8 @@
 
 
         
-        public function createE($roles,$username,$psswd,$name){
-            $sql = "INSERT INTO `users` (roles,username,psswd,name) VALUES ('$roles','$username','$psswd','$name')"; 
+        public function createE($roles,$username,$psswd,$nombre){
+            $sql = "INSERT INTO `users` (roles,username,psswd,nombre) VALUES ('$roles','$username','$psswd','$nombre')"; 
             $res = mysqli_query($this->con, $sql);
             if ($res){
                 return true;
@@ -43,8 +43,8 @@
             }
         }
 
-        public function Altausuarios($username,$psswd,$name){
-            $sql = "INSERT INTO `users` (username,psswd,name) VALUES ('$username','$psswd','$name')"; 
+        public function Altausuarios($username,$psswd,$nombre){
+            $sql = "INSERT INTO `users` (username,psswd,nombre) VALUES ('$username','$psswd','$nombre')"; 
             $res = mysqli_query($this->con, $sql);
             if ($res){
                 return true;
@@ -53,8 +53,8 @@
                 return false;
             }
     }
-        public function altaP($Producto, $Precio, $Talla, $productoD,$imagenes,$idCategoria,$idSubCategoria){
-            $sql = "INSERT INTO `producto` (Producto, Precio,Talla,productoD,imagenes_url,idCategoria,idSubCategoria) VALUES ('$Producto','$Precio','$Talla','$productoD','$imagenes','$idCategoria','$idSubCategoria')";
+        public function altaP($Producto, $Precio, $Talla, $productoD,$imagenes,$nombreCategoria,$idSubCategoria){
+            $sql = "INSERT INTO `producto` (Producto, Precio,Talla,productoD,imagenes_url,nombreCategoria,idSubCategoria) VALUES ('$Producto','$Precio','$Talla','$productoD','$imagenes','$nombreCategoria','$idSubCategoria')";
             $res = mysqli_query($this->con, $sql);
             if ($res){
                 return true;
@@ -65,7 +65,7 @@
         }
         
        public function Eread(){
-            $sql = "SELECT * FROM usuario";
+            $sql = "SELECT * FROM users";
             $res = mysqli_query($this->con,$sql);
             return $res; 
         
@@ -77,8 +77,8 @@
         
        }
        
-       public function Csingle_record($id){
-           $sql = "SELECT * FROM usuario where id='$id'";
+       public function Esingle_record($id){
+           $sql = "SELECT * FROM users where id='$id'";
            $res = mysqli_query($this->con,$sql);
            $return = mysqli_fetch_object($res);
            return $return;
@@ -91,8 +91,8 @@
            return $return;
        } 
 
-        public function Eupdate($Nombre,$Apellido,$Correo,$Telefono,$Domicilio,$Contrasena,$id){
-           $sql = "UPDATE users SET Nombre='$Nombre',Apellido='$Apellido',Correo='$Correo',Telefono='$Telefono',Domicilio='$Domicilio',Contrasena='$Contrasena' WHERE id='$id'";
+        public function Eupdate($roles,$username,$psswd,$nombre,$id){
+           $sql = "UPDATE users SET roles='$roles',username='$username',psswd='$psswd',nombre='$nombre' WHERE id='$id'";
            $res = mysqli_query($this->con,$sql);
            if ($res) {
                return true;

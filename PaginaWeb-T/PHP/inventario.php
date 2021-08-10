@@ -22,11 +22,14 @@
 <div class="container">
         <div class="table-wrapper">
             <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-8"><h2>Listado de  <b>Productos</b></h2></div>
-                    <div class="col-sm-4">
+            <div class="row">
+            <div class="col-sm-4">
                         <a href="createP.php" class="btn btn-info add-new"><i class="fa fa-plus"></i> Agregar Producto</a>
                         <a href="home.php" class="btn btn-info add-new"></i> Perfil</a>
+                  </div>
+</div>
+                <div class="row">
+                    <div class="col-sm-12"><h2>Listado de  Productos</h2></div>
                     </div>
                 </div>
             </div>

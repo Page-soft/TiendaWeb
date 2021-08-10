@@ -21,7 +21,7 @@ background-repeat: no-repeat;
     </header>
     <div class="main-content">
         <div class="container-ropa">
-            <div class="celda-ropa" >Vestidos</div>
+            <img src="../Imagenes/Vestidos.png" width="1040px" alt=""></div>
             <div class="lista-productos">
                 <div class="producto-box">
                     <a href="playera-azul.jpg">

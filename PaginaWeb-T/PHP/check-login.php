@@ -29,7 +29,7 @@
             if(mysqli_num_rows($result) === 1){
                 $row = mysqli_fetch_assoc($result);
                 if ($row['psswd']=== $psswd && $row['roles']== $roles){
-                    $_SESSION['name'] = $row['name'];
+                    $_SESSION['nombre'] = $row['nombre'];
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['roles'] = $row['roles'];
                     $_SESSION['username'] = $row['username'];
