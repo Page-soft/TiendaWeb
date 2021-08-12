@@ -54,6 +54,18 @@
            return $return;
        } 
 
+       /*A o D Empleados*/
+        public function Eupdate($roles,$username,$psswd,$nombre,$id){
+           $sql = "UPDATE users SET roles='$roles',username='$username',psswd='$psswd',nombre='$nombre' WHERE id='$id'";
+           $res = mysqli_query($this->con,$sql);
+           if ($res) {
+               return true;
+           }
+           else{
+               return false;
+           }
+       }
+
        /*Crear Usuarios*/
         public function createU($roles,$username,$psswd,$nombre){
             $sql = "INSERT INTO `users` (roles,username,psswd,nombre) VALUES ('$roles','$username','$psswd','$nombre')"; 
@@ -135,7 +147,8 @@
        } 
 
         
-       /*A o D Productos*/
+
+       /*Ac o B Productos*/
        public function Pupdate($Producto,$Precio,$Talla,$productoD,$idCategoria,$idSubCategoria,$idProducto){
            $sql = "UPDATE producto SET Producto='$Producto',Precio='$Precio',Talla='$Talla',productoD='$productoD',idCategoria='$idCategoria',idSubCategoria='$idSubCategoria' WHERE idProducto='$idProducto'";
            $res = mysqli_query($this->con,$sql);
