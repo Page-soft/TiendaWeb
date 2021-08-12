@@ -21,15 +21,14 @@ include "HeaderAdmin.php";
 <div class="productos">
         <div class="table-wrapper">
             <div class="table-title">
+                <img src="../Imagenes/Agregar Producto.jpg" width="1000px" alt=""></div>
             <div class="container">
-            <div class="col-sm-2">
-            <a href="index.php" class="btn btn-info add-new"><i class="fa fa-arrow-left"></i> Regresar</a>
-                </div>
                 <div class="row">
-                    <div class="col-sm-10"><h2>Agregar Producto</h2></div>
+                 <div class="col-sm-1">
+                        <a href="index.php" class="btn btn-info add-new"><i class="fa fa-arrow-left"></i> Regresar</a>
+                    </div>  
                 </div>
             </div>
-
             <?php
                 include ('database.php');
                 $productos = new Database();
@@ -63,16 +62,17 @@ include "HeaderAdmin.php";
             ?>
 
 
-           <div class="container">
+           <p><p>
+            <div class="container">
 				<form method="post">
                 <div class="row">
 				<div class="col-md-4">
 					<label>Nombre del Producto</label>
-					<input type="text" name="Producto" id="Producto" class='form-control' maxlength="100" required placeholder="Nombre del Producto">
+					<input type="text" name="Producto" id="Producto" class='form-control' maxlength="100"  required placeholder="Nombre del Producto">
 				</div>
 				<div class="col-md-4">
 					<label>Precio</label>
-					<input type="text" name="Precio" id="Precio" class='form-control' maxlength="64" required placeholder="Precio del Producto">
+                    <input type="text" name="Precio" id="Precio" class='form-control' maxlength="64" required placeholder="Precio en Pesos">
 				</div>
 				<div class="col-md-4">
                     <label>Talla</label>
@@ -97,20 +97,20 @@ include "HeaderAdmin.php";
                     <label>Categoria</label>
                     <select id="idCategoria" name="idCategoria" class='form-control'>
                     <option value="0" disabled selected>Seleccione una Categoria</option>
-                    <option value="1" >Hombre</option>
-                    <option value="2" >Mujer</option>
-                    <option value="3" >Joven</option>
+                    <option value="Hombre" >Hombre</option>
+                    <option value="Mujer" >Mujer</option>
+                    <option value="Joven" >Joven</option>
                     </select>
                 </div>
                 <div class="col-md-4">
                     <label>SubCategoria</label>
                     <select id="idSubCategoria" name="idSubCategoria" class='form-control'>
                     <option value="0" disabled selected>Seleccione una SubCategoria</option>
-                    <option value="1" >Camisas</option>
-                    <option value="2" >Pantalon</option>
-                    <option value="3" >Short</option>
-                    <option value="4" >Blusa</option>
-                    <option value="5" >Vestido</option>
+                    <option value="Camisas" >Camisas</option>
+                    <option value="Pantalon" >Pantalon</option>
+                    <option value="Short" >Short</option>
+                    <option value="Blusa" >Blusa</option>
+                    <option value="Vestido" >Vestido</option>
                 </select>
                 </div>
                 <div class="col-md-4">

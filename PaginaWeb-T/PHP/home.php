@@ -21,7 +21,7 @@ background-repeat: no-repeat;
 <body>
         <div class="container d-flex justify-content-center align-items-center"
          style="min-height: 100vh">
-            <?php if ($_SESSION['roles'] == 'admin') {?>
+            <?php if ($_SESSION['roles'] == 'Administrador') {?>
                 <div class="card" style="width: 18rem;">
                   <img src=""
                        class=""
@@ -30,17 +30,21 @@ background-repeat: no-repeat;
                       <h5 class="card-title">
                           <?=$_SESSION['nombre']?>
                       </h5>
-                    <p><a href="PagPS.php" class="btn btn-primary">Inicio</a></p>
+                    <p><a href="PagPS.php" class="btn btn-outline-dark">Ir a la Tienda</a></p>
 
                     <p> <a href="CreateP.php"  type="button" class="btn btn-outline-success">Agregar Producto</a> </p>
 
-                    <p> <a href="inventario.php"  type="button" class="btn btn-outline-success">Ver Intentario</a> </p>
+                    <p> <a href="inventario.php"  type="button" class="btn btn-outline-success">Inventario de Productos</a> </p>
 
-                     <p><a href="createU.php" type="button" class="btn btn-outline-info">Crear Empleado </a></p>
+                    <p><a href="createE.php" type="button" class="btn btn-outline-primary">Crear Empleado </a></p>
 
-                     <p><a href="Tabla.php" type="button" class="btn btn-outline-info">Ver Registro </a></p>
+                    <p><a href="TablaE.php" type="button" class="btn btn-outline-primary">Registro de Empleados</a></p>
 
-                     <p><a href="logout.php" class="btn btn-danger">Cerrar Sesion</a></p>
+                    <p><a href="createU.php" type="button" class="btn btn-outline-info">Crear Usuario </a></p>
+
+                    <p><a href="TablaU.php" type="button" class="btn btn-outline-info">Registro de Usuarios</a></p>
+
+                    <p><a href="logout.php" class="btn btn-outline-danger">Cerrar Sesion</a></p>
                   </div>
                 </div>
                 <div class="p-3">
@@ -57,9 +61,9 @@ background-repeat: no-repeat;
                 <?=$_SESSION['nombre']?>
                 </h5>
 
-                <p><a href="PagP.php" class="btn btn-dark">Ir a la tienda</a></p>
+                <p><a href="PagPS.php" class="btn btn-outline-dark">Ir a la tienda</a></p>
 
-                <a href="logout.php" class="btn btn-dark">Cerrar sesion</a>
+                <a href="logout.php" class="btn btn-outline-danger">Cerrar sesion</a>
 
                 </div>
                 </div>

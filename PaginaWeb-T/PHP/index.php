@@ -20,34 +20,39 @@ background-size: cover;
 background-repeat: no-repeat;
 }
 </style>
-<body background="../Imagenes/Fondo1.jpeg">
+<body>
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh">
+    <div class="p-3 mb-2 bg-white text-dark">
     <form class="border shadow p-5 rounded" action="check-login.php" method="POST" style="width: 450px;">
             <h1 class="text-center p-3">Iniciar Sesion</h1>
             <?php if (isset($_GET['error'])) { ?>
                 <div class="alert-danger" roles="alert">
                 <?=$_GET['error'] ?>
                 </div>
-            <?php } ?>
-            <div class="mb-3">
-                    <label for="username" class="from-label">Correo </label>
-                    <input type="text" class="from-control" name="username" id="username">
-            </div>
-            <div class="mb-3">
-                    <label for="psswd" class="from-label">Contraseña </label>
-                    <input type="password" class="from-control" name="psswd" id="psswd">
-            </div>
+            <?php } ?>  
+                <div class="row">
+                <form method="post">
+                <div class="col-md-12">
+                    <label>Correo electrónico:</label>
+                    <input type="email" name="username" id="username" class='form-control' maxlength="100" required>
+                </div>
+                <div class="col-md-12">
+                    <label>Contraseña:</label>
+                    <input type="password" name="psswd" id="psswd" class='form-control' maxlength="100" required >
+                </div>
             <div class="mb-1">
                     <label class="from-label">Selecciona tu tipo de Usuario </label>
             </div>
             <select class="form-select mb-3" name="roles" aria-label="Seleccion">
-                <option selected value="user">Usuario</option>
-                <option value="admin">Admin</option>
+                <option selected value="Usuario">Usuario</option>
+                <option value="Administrador">Administrador</option>
             </select>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
             <a href="registro.php" >¿Todavía no tienes cuenta?</a></p>
         </form>
             </div>
+        </div>
+    </div>
 </body>
 <?php
     include "Footer.php";
