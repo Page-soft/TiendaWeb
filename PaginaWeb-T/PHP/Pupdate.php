@@ -73,33 +73,56 @@
 			$datos_cliente = $AProducto->Psingle_record($id);
 		?>
 
-			<div class="row">
+
+			<div class="container">
 				<form method="post">
-				<div class="col-md-6">
+                <div class="row">
+				<div class="col-md-4">
 					<label>Producto:</label>
 					<input type="text" name="Producto" id="Producto" class='form-control' maxlength="100" required  value="<?php echo $datos_cliente->Producto;?>">
 					<input type="hidden" name="id" id="id" class='form-control' maxlength="100"   value="<?php echo $datos_cliente->idProducto;?>">
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<label>Precio:</label>
 					<input type="text" name="Precio" id="Precio" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->Precio;?>">
 				</div>
-				<div class="col-md-6">
-					<label>Talla:</label>
-					<input type="text" name="Talla" id="Talla" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->Talla;?>">
-				</div>
-				<div class="col-md-6">
-					<label>Categoria:</label>
-					<input type="text" name="idCategoria" id="idCategoria" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->idCategoria;?>">
-				</div>
-				<div class="col-md-6">
-					<label>SubCategoria:</label>
-					<input type="text" name="idSubCategoria" id="idSubCategoria" class='form-control' maxlength="100" required value="<?php echo $datos_cliente->idSubCategoria;?>">
-				</div>
-				<div class="col-md-6">
-					<label>Descripcion:</label>
-					<input type="text" name="productoD" id="productoD" class='form-control' maxlength="50" required value="<?php echo $datos_cliente->productoD;?>">
-				</div>
+				<div class="col-md-4">
+                    <label>Talla</label>
+                    <select id="Talla" name="Talla" class='form-control'>
+                    <option value="0" disabled selected>Seleccione una Talla</option>
+                    <option value="Ch" >Ch</option>
+                    <option value="M" >M</option>
+                    <option value="G" >G</option>
+                    <option value="XL" >XL</option>
+                    <option value="XXL" >XXL</option>
+                    </select>
+                </div>
+				<div class="col-md-4">
+                    <label>Categoria</label>
+                    <select id="idCategoria" name="idCategoria" class='form-control'>
+                    <option value="0" disabled selected>Seleccione una Categoria</option>
+                    <option value="Hombre" >Hombre</option>
+                    <option value="Mujer" >Mujer</option>
+                    <option value="Joven" >Joven</option>
+                    </select>
+                </div>
+				<div class="col-md-4">
+                    <label>SubCategoria</label>
+                    <select id="idSubCategoria" name="idSubCategoria" class='form-control'>
+                    <option value="0" disabled selected>Seleccione una SubCategoria</option>
+                    <option value="Camisas" >Camisas</option>
+                    <option value="Pantalon" >Pantalon</option>
+                    <option value="Short" >Short</option>
+                    <option value="Blusa" >Blusa</option>
+                    <option value="Vestido" >Vestido</option>
+                </select>
+                </div>
+				<div class="container">
+            <div class="row">
+				<div class="col-md-12">
+                    <label>Descripcion</label>
+                    <textarea name="productoD" id="productoD" class='form-control' maxlength="50" required placeholder="Caracteristicas del Producto" ></textarea>
+                </div>
 				
 				
 				<div class="col-md-12 pull-right">

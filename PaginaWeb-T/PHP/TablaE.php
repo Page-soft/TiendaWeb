@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-sm-8"><h2>Lista de  <b>Registro</b></h2></div>
                     <div class="col-sm-4">
-                        <a href="createU.php" class="btn btn-info add-new"><i class="fa fa-plus"></i> Agregar Empleado</a>
+                        <a href="createE.php" class="btn btn-info add-new"><i class="fa fa-plus"></i> Agregar Empleado</a>
                         <a href="home.php" class="btn btn-info add-new"></i> Perfil</a>
                     </div>
                 </div>
