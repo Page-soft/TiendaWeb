@@ -18,7 +18,7 @@
                 <img src="../Imagenes/carrito de compras.jpeg" width="400px" height="500px" alt="">
             </ul>
             <link  rel="stylesheet" href="../CCS/Botones.css">
-            <a href="PagP.php"><button class="btnMenu">Menu</button> </a>
+            <a href="PagPS.php"><button class="btnMenu">Menu</button> </a>
         </div>
     </div>
 </div>

@@ -37,7 +37,7 @@
                     echo '<div class="card-group">';
                 }
                 if($i < 3){ 
-                    while($row = mysqli_fetch_row($resultado)){
+                	while($row = mysqli_fetch_row($resultado)){
                     echo "<div class='card'>";
                     echo "<img src='".$row[5]."' class='card-img-top' alt='image-responsive'>";    
                     echo "<div class='card-body'>";
@@ -49,8 +49,8 @@
                     echo "<button class='btn btn-primary'>Comprar</button></form>";
                     echo "</div>";
                     echo "</div>";
-                 }
-                    $j++;
+               	 }
+                 	$j++;
                   $i++;
                 }
                 if($i == 3){
@@ -59,7 +59,7 @@
                 }
             }
             if($j == 9){
-                echo "</div><br>";
+            	echo "</div><br>";
             }
 
             ?>
