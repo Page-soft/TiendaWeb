@@ -29,14 +29,14 @@ background-repeat: no-repeat;
 
             <?php
                include ('database.php');
-               $usuarios = new Database();
+               $Rusuarios = new Database();
                if(isset($_POST) && !empty($_POST)){
-                   $username                  = $usuarios->sanitize($_POST['username']);
-                   $psswd                      =md5($usuarios->sanitize($_POST['psswd']));
-                   $nombre                      = $usuarios->sanitize($_POST['nombre']);
+                   $username                  = $Rusuarios->sanitize($_POST['username']);
+                   $psswd                      =md5($Rusuarios->sanitize($_POST['psswd']));
+                   $nombre                      = $Rusuarios->sanitize($_POST['nombre']);
                 
  
-                   $res = $usuarios->Altausuarios($username,$psswd,$nombre);
+                   $res = $Rusuarios->usuariosR($username,$psswd,$nombre);
                    
 
                    if($res){
@@ -59,12 +59,10 @@ background-repeat: no-repeat;
             ?>
 
 
-        <div class="container d-flex justify-content-center align-items-center"
-            style="min-height: 100vh">
-                <form class="border shadow p-5 rounded"
-                    method="post"
-                    style="width: 500px;">
-                    <h1 class="text-center p-3">Registro</h1>   
+        <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh">
+        <div class="p-3 mb-2 bg-white text-dark">
+        <form class="border shadow p-5 rounded" method="post" style="width: 500px;">
+        <h1 class="text-center p-3">Registro</h1>   
                 <div class="row">
                 <form method="post">
                 <div class="col-md-12">

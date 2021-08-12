@@ -21,9 +21,9 @@ include "HeaderAdmin.php";
     <div class="container">
         <div class="table-wrapper">
             <div class="table-title">
-                <img src="../Imagenes/AgUsuario.jpeg" width="1000px" alt=""></div>
+                <img src="../Imagenes/Agregar Empleado.jpg" width="1000px" alt=""></div>
                 <div class="row">
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                         <a href="index.php" class="btn btn-info add-new"><i class="fa fa-arrow-left"></i> Regresar</a>
                     </div>
                 </div>
@@ -31,15 +31,15 @@ include "HeaderAdmin.php";
 
             <?php
                 include ('database.php');
-                $Usuarios = new Database();
+                $Empleados = new Database();
                 if(isset($_POST) && !empty($_POST)){
-                	$roles                           = $Usuarios->sanitize($_POST['roles']);
-                    $username                       = $Usuarios->sanitize($_POST['username']);
-                    $password                     =md5($Usuarios->sanitize($_POST['password']));
-                    $nombre                         = $Usuarios->sanitize($_POST['nombre']);
+                	$roles                           = $Empleados->sanitize($_POST['roles']);
+                    $username                       = $Empleados->sanitize($_POST['username']);
+                    $password                     =md5($Empleados->sanitize($_POST['password']));
+                    $name                         = $Empleados->sanitize($_POST['name']);
                     
 
-                    $res = $Usuarios->createU($roles,$username,$password,$nombre);
+                    $res = $Empleados->createE($roles,$username,$password,$name);
 
                     if($res){
                         $message = " Datos insertados con éxitos";
@@ -77,12 +77,12 @@ include "HeaderAdmin.php";
 				</div>
 				<div class="col-md-3">
 					<label>Nombre:</label>
-					<input type="text" name="nombre" id="nombre" class='form-control' maxlength="15" required >
+					<input type="text" name="name" id="name" class='form-control' maxlength="15" required >
 				</div>
 				
 				<div class="col-md-12 pull-right">
 				<hr>
-					<button type="submit" class="btn btn-success">Guardar Usuario</button>
+					<button type="submit" class="btn btn-success">Guardar Empleado</button>
 				</div>
 				</form>
 			</div>
