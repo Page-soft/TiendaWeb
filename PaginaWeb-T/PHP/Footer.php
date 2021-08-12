@@ -47,7 +47,7 @@ footer .footer-below {
                 </div>
                 <div class="col-md-4 footer-col">
                     <h3>Telefono</h3>
-                    <p>314 202 9482</p>
+                    <p>314 202 6312</p>
                 </div>
             </div>
         </div>

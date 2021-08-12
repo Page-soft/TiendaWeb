@@ -4,15 +4,6 @@
             <!--Imagen Logo superior Izquierda-->
             <a href="PagNS.php"> <img src="../Imagenes/LogoRopa2.jpg" WIDTH="150px" HEIGHT="100px" alt=""> </a>
             </div> 
-           
-            <!--Barra de Busqueda-->
-            <div class="field" id="searchform">
-              <input type="text" id="searchterm" placeholder="Ropa" />
-              <button type="button" id="search">Buscar</button>
-            </div>
-           
-            <!--Boton Carrito-->
-            <button id="Carrito" class="navbar-toggler" onClick="javascript:close_clip()"><a href="NCarrito.php"><img src="../Imagenes/carro-de-la-compra.png"WIDTH="30px" HEIGHT="30px" alt=""></a></button>
             
             <!--Boton de Iniciar Sesion-->
             <button id="registro" class="navbar-toggler" onClick="javascript:close_clip()"><a href="index.php"><img src="../Imagenes/usuario.png"WIDTH="30px" HEIGHT="30px" alt=""></a></button>

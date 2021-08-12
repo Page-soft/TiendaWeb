@@ -64,8 +64,11 @@ include "HeaderAdmin.php";
 			<form method="post">
 			<div class="row">
 			<div class="col-md-3">
-                    <label>Roles:</label>
-                    <input type="text" name="roles" id="roles" class='form-control' maxlength="100" required>
+                    <label>Rol</label>
+                    <select id="roles" name="roles" class='form-control'>
+                    <option value="0" disabled selected>Seleccione Rol</option>
+                    <option value="Usuario" >Usuario</option>
+                    </select>
                 </div>
 				<div class="col-md-3">
 					<label>Correo:</label>
